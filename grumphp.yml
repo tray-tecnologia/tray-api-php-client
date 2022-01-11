@@ -1,2 +1,1 @@
 grumphp:
-    tasks: { phpcs: null }

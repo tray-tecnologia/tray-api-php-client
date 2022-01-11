@@ -1,6 +1,6 @@
 <?php
 
-namespace Tray\Contracts;
+namespace Tray\Client\Contracts;
 
 use GuzzleHttp\ClientInterface;
 
@@ -9,19 +9,20 @@ use GuzzleHttp\ClientInterface;
  *
  * @version 0.1.0
  */
-interface IClient {
+interface IClient
+{
     /**
      * This client is currently in beta version.
      *
      * @var string
      */
-    const version = '0.1.0';
+    public const VERSION = '0.1.0';
 
     /**
      * IClient constructor.
      *
      * @param IConfig $config
-     * @param IAuth $authHandler
+     * @param IAuth   $authHandler
      */
     public function __construct(IConfig $config, IAuth $authHandler);
 

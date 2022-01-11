@@ -1,10 +1,10 @@
 <?php
 
-namespace Tray\Contracts\Http;
+namespace Tray\Client\Contracts\Http;
 
 use GuzzleHttp\ClientInterface;
-use Illuminate\Contracts\Support\Arrayable;
 use Psr\Http\Message\RequestInterface;
+use Tray\Support\Contracts\IArrayable;
 
 interface IRequest
 {
@@ -18,8 +18,8 @@ interface IRequest
     /**
      * Runs the given request.
      *
-     * @param RequestInterface  $request
-     * @param array  $queries
+     * @param  RequestInterface $request
+     * @param  array            $queries
      * @return IResponse
      */
     public function execute(RequestInterface $request, array $queries = []): IResponse;
@@ -27,9 +27,9 @@ interface IRequest
     /**
      * Make requests with the GET method.
      *
-     * @param string  $uri
-     * @param array  $queries
-     * @param array  $headers
+     * @param  string $uri
+     * @param  array  $queries
+     * @param  array  $headers
      * @return IResponse
      */
     public function get($uri, array $queries = [], array $headers = []): IResponse;
@@ -37,10 +37,10 @@ interface IRequest
     /**
      * Make requests with the POST method.
      *
-     * @param string  $uri
-     * @param array  $queries
-     * @param array|Arrayable|null $body
-     * @param array  $headers
+     * @param  string                $uri
+     * @param  array                 $queries
+     * @param  array|IArrayable|null $body
+     * @param  array                 $headers
      * @return IResponse
      */
     public function post($uri, array $queries = [], $body = null, array $headers = []): IResponse;
@@ -48,10 +48,10 @@ interface IRequest
     /**
      * Make requests with the UPDATE method.
      *
-     * @param string  $uri
-     * @param array  $queries
-     * @param array|Arrayable|null $body
-     * @param array  $headers
+     * @param  string                $uri
+     * @param  array                 $queries
+     * @param  array|IArrayable|null $body
+     * @param  array                 $headers
      * @return IResponse
      */
     public function update($uri, array $queries = [], array $headers = [], $body = null): IResponse;
@@ -59,9 +59,9 @@ interface IRequest
     /**
      * Make requests with the DELETE method.
      *
-     * @param string  $uri
-     * @param array  $queries
-     * @param array  $headers
+     * @param  string $uri
+     * @param  array  $queries
+     * @param  array  $headers
      * @return IResponse
      */
     public function delete($uri, array $queries = [], array $headers = []): IResponse;
