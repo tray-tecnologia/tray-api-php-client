@@ -1,11 +1,12 @@
 <?php
 
-namespace Tray\Contracts;
+namespace Tray\Client\Contracts;
 
 /**
  * @author Rodrigo Damasceno <rodrigo.damasceno@tray.net.br>
  */
-interface IConfig {
+interface IConfig
+{
     /**
      * IConfig constructor.
      *

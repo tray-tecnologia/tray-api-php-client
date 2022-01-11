@@ -1,13 +1,14 @@
 <?php
 
-namespace Tray\Contracts\Http;
+namespace Tray\Client\Contracts\Http;
 
-use Illuminate\Contracts\Pagination\Paginator;
-use Illuminate\Support\Collection;
+use Tray\Entities\Contracts\IEntity;
+use Tray\Pagination\Contracts\IPaginator;
+use Tray\Support\Contracts\ICollection;
 
 interface IResponse
 {
-    const ERRORS = [
+    public const ERRORS = [
         400 => 'Bad Request',
         401 => 'Unauthorized',
         403 => 'Forbidden',
@@ -18,7 +19,7 @@ interface IResponse
         429 => 'Too Many Requests',
     ];
 
-    const FAILURES = [
+    public const FAILURES = [
         500 => 'Internal Server Error',
         501 => 'Not Implemented',
         503 => 'Service Unavailable',
@@ -27,7 +28,7 @@ interface IResponse
     /**
      * ResultTransformer constructor.
      *
-     * @param mixed $content
+     * @param mixed  $content
      * @param string $entityClass
      */
     public function __construct($content, string $entityClass);
@@ -42,21 +43,21 @@ interface IResponse
     /**
      * Transforma os dados fornecidos em dados paginados.
      *
-     * @return Paginator
+     * @return IPaginator
      */
-    public function toPaginator(): Paginator;
+    public function toPaginator(): IPaginator;
 
     /**
      * Transforma os itens em uma coleção de entidades.
      *
-     * @return Collection
+     * @return ICollection
      */
-    public function toCollection(): Collection;
+    public function toCollection(): ICollection;
 
     /**
      * Transforma o item fornecido em uma entidade.
      *
-     * @return Entity
+     * @return IEntity
      */
-    public function toEntity(): Entity;
+    public function toEntity(): IEntity;
 }

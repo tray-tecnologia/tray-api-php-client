@@ -1,0 +1,75 @@
+stages:
+  - Build
+  - Code Quality
+  - Deploy
+
+variables:
+  PROJECT_REGISTRY: registry.git.tray.net.br/tray-libs/api-commerce-client/client
+  PACKAGE_REGISTRY: "https://git.tray.net.br/api/v4/projects/$CI_PROJECT_ID/packages/composer"
+  IMAGE_NAME: pipeline-image
+  PROJECT_IMAGE: $PROJECT_REGISTRY/$IMAGE_NAME
+
+Build Image:
+  stage: Build
+  tags:
+    - k8s-runner
+  except:
+    - master
+    - tags
+  script:
+    - docker login registry.git.tray.net.br -u $REGISTRY_USER -p $REGISTRY_PASSWORD
+    - docker build . -t $IMAGE_NAME
+    - docker tag $IMAGE_NAME $PROJECT_IMAGE
+    - docker push $PROJECT_IMAGE
+
+PHP MD:
+  stage: Code Quality
+  tags:
+    - k8s-runner
+  except:
+    - master
+    - tags
+  script:
+    - docker run $PROJECT_IMAGE ./vendor/bin/phpmd src/ text cleancode,codesize
+    - docker run $PROJECT_IMAGE ./vendor/bin/phpmd tests/ text cleancode,codesize
+
+PHP STAN:
+  stage: Code Quality
+  tags:
+    - k8s-runner
+  except:
+    - master
+    - tags
+  script:
+    - docker run $PROJECT_IMAGE ./vendor/bin/phpstan analyse -l 7 -c phpstan.neon src/
+    - docker run $PROJECT_IMAGE ./vendor/bin/phpstan analyse -l 7 -c phpstan.neon tests/
+
+PHP CS:
+  stage: Code Quality
+  tags:
+    - k8s-runner
+  except:
+    - master
+    - tags
+  script:
+    - docker run $PROJECT_IMAGE ./vendor/bin/phpcs src/ tests/ --extensions=php --standard=PSR12
+
+GRUMPHP:
+  stage: Code Quality
+  tags:
+    - k8s-runner
+  except:
+    - master
+    - tags
+  script:
+    - docker run $PROJECT_IMAGE ./vendor/bin/grumphp run
+
+deploy:
+  stage: Deploy
+  tags:
+    - k8s-runner
+  only:
+    - tags
+  script:
+    - echo $CI_COMMIT_TAG
+    - 'curl --header "Job-Token: $CI_JOB_TOKEN" --data "tag=$CI_COMMIT_TAG" "$PACKAGE_REGISTRY"'

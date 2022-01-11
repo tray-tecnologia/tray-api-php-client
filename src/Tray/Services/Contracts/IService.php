@@ -1,6 +1,8 @@
 <?php
 
-namespace Tray\Contracts;
+namespace Tray\Services\Contracts;
+
+use Tray\Client\Contracts\IClient;
 
 interface IService
 {
