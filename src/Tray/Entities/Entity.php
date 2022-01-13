@@ -8,7 +8,7 @@ use Tray\Support\Contracts\IArrayable;
  * @SuppressWarnings(PHPMD.TooManyPublicMethods)
  * @SuppressWarnings(PHPMD.ExcessiveClassComplexity)
  */
-abstract class Entity implements Contracts\IEntity
+class Entity implements Contracts\IEntity
 {
     use Concerns\CastsAttributes;
     use Concerns\HasMutations;

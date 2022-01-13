@@ -2,62 +2,73 @@
 
 namespace Tray\Client\Contracts\Http;
 
-use Tray\Entities\Contracts\IEntity;
-use Tray\Pagination\Contracts\IPaginator;
-use Tray\Support\Contracts\ICollection;
+use Psr\Http\Message\ResponseInterface;
+//use Tray\Entities\Contracts\IEntity;
+//use Tray\Pagination\Contracts\IPaginator;
+//use Tray\Support\Contracts\ICollection;
 
 interface IResponse
 {
-    public const ERRORS = [
-        400 => 'Bad Request',
-        401 => 'Unauthorized',
-        403 => 'Forbidden',
-        404 => 'Not Found',
-        405 => 'Method Not Allowed',
-        406 => 'Not Acceptable',
-        422 => 'Unprocessable Entity',
-        429 => 'Too Many Requests',
-    ];
-
-    public const FAILURES = [
-        500 => 'Internal Server Error',
-        501 => 'Not Implemented',
-        503 => 'Service Unavailable',
-    ];
-
     /**
-     * ResultTransformer constructor.
+     * IResponse's constructor.
      *
-     * @param mixed  $content
-     * @param string $entityClass
+     * @param ResponseInterface $response
+     * @param array $options
      */
-    public function __construct($content, string $entityClass);
+    public function __construct(ResponseInterface $response, array $options);
 
     /**
      * Retorna a resposta sem tratamento.
      *
      * @return mixed
      */
-    public function getContent();
+    public function getContents();
 
-    /**
-     * Transforma os dados fornecidos em dados paginados.
-     *
-     * @return IPaginator
-     */
-    public function toPaginator(): IPaginator;
-
-    /**
-     * Transforma os itens em uma coleção de entidades.
-     *
-     * @return ICollection
-     */
-    public function toCollection(): ICollection;
-
-    /**
-     * Transforma o item fornecido em uma entidade.
-     *
-     * @return IEntity
-     */
-    public function toEntity(): IEntity;
+//    /**
+//     * Creates a new response instance with the given entity class.
+//     *
+//     * @param class-string<IPaginator> $paginatorClass
+//     *
+//     * @return IResponse
+//     */
+//    public function withPaginator(string $paginatorClass): IResponse;
+//
+//    /**
+//     * Creates a new response instance with the given entity class.
+//     *
+//     * @param class-string<ICollection> $collectionClass
+//     *
+//     * @return IResponse
+//     */
+//    public function withCollection(string $collectionClass): IResponse;
+//
+//    /**
+//     * Creates a new response instance with the given entity class.
+//     *
+//     * @param class-string<IEntity> $entityClass
+//     *
+//     * @return IResponse
+//     */
+//    public function withEntity(string $entityClass): IResponse;
+//
+//    /**
+//     * Transforma os dados fornecidos em dados paginados.
+//     *
+//     * @return IPaginator
+//     */
+//    public function toPaginator(): IPaginator;
+//
+//    /**
+//     * Transforma os itens em uma coleção de entidades.
+//     *
+//     * @return ICollection
+//     */
+//    public function toCollection(): ICollection;
+//
+//    /**
+//     * Transforma o item fornecido em uma entidade.
+//     *
+//     * @return IEntity
+//     */
+//    public function toEntity(): IEntity;
 }

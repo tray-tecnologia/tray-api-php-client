@@ -27,6 +27,23 @@ class Collection implements ICollection
     }
 
     /**
+     * @inheritDoc
+    */
+    public function getAvailableFilters(): array
+    {
+        // TODO: Implement getAvailableFilters() method.
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getAppliedFilter(): array
+    {
+        // TODO: Implement getAppliedFilter() method.
+    }
+
+
+    /**
      * Determine if an item exists at an offset.
      *
      * @param  mixed $key

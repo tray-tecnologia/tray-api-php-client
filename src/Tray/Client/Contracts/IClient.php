@@ -2,12 +2,11 @@
 
 namespace Tray\Client\Contracts;
 
-use GuzzleHttp\ClientInterface;
+use Tray\Client\Contracts\Auth\IAuthenticator;
+use Tray\Client\Contracts\Http\IRequest;
 
 /**
  * @author Rodrigo Damasceno <rodrigo.damasceno@tray.net.br>
- *
- * @version 0.1.0
  */
 interface IClient
 {
@@ -22,9 +21,9 @@ interface IClient
      * IClient constructor.
      *
      * @param IConfig $config
-     * @param IAuth   $authHandler
+     * @param IAuthenticator|null $authHandler
      */
-    public function __construct(IConfig $config, IAuth $authHandler);
+    public function __construct(IConfig $config, ?IAuthenticator $authHandler);
 
     /**
      * Returns the config instance.
@@ -34,9 +33,9 @@ interface IClient
     public function getConfig(): IConfig;
 
     /**
-     * Returns a http client with the authorization strategy.
+     * Retrieves the http client.
      *
-     * @return ClientInterface
+     * @return IRequest
      */
-    public function authorize(): ClientInterface;
+    public function getRequest(): IRequest;
 }
