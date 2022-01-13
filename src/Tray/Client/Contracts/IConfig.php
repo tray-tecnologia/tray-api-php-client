@@ -10,12 +10,12 @@ interface IConfig
     /**
      * IConfig constructor.
      *
-     * @param array $configurations
+     * @param array $config
      */
-    public function __construct(array $configurations);
+    public function __construct(array $config);
 
     /**
-     * The store's api url.
+     * Retrieves the store's api url.
      *
      * @return string
      */
@@ -31,7 +31,8 @@ interface IConfig
 
     /**
      * Retrieves the application's secret key.
-     * This key is used along with the consumer key, to request access to the resources.
+     * This key is used along with the consumer key,
+     * to request access to the resources.
      *
      * @return string
      */

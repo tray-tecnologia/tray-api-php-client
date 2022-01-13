@@ -1,6 +1,12 @@
 {
     "name": "tray-client/client",
     "description": "Api client",
+    "authors": [
+        {
+            "name": "Rodrigo Damasceno",
+            "email": "rodrigo.damasceno@tray.net.br"
+        }
+    ],
     "version": "0.1.0",
     "license": "MIT",
     "type": "project",
@@ -22,7 +28,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Tray\\": "src/Tray"
+            "Tray\\": "src/Tray",
+            "Tests\\": "tests"
         }
     },
     "autoload-dev": {
