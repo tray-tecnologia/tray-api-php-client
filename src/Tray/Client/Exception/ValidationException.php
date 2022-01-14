@@ -1,6 +1,6 @@
 <?php
 
-namespace Tray\Client\Exception\Http;
+namespace Tray\Client\Exception;
 
 class ValidationException extends ClientException
 {

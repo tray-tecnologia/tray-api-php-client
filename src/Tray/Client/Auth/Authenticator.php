@@ -6,10 +6,8 @@ use Tray\Client\Contracts\{Auth\IGuard, Auth\IAuthenticator, Auth\Token, IConfig
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Uri;
-use GuzzleHttp\Psr7\Utils;
 use Psr\Http\Message\RequestInterface;
-use Throwable;
-use Tray\Client\Exception\Http\UnauthorizedException;
+use Tray\Client\Exception\UnauthorizedException;
 
 /**
  * @SuppressWarnings(PHPMD.StaticAccess)
@@ -93,16 +91,14 @@ class Authenticator implements IAuthenticator
             ]
         );
 
-        $response = $client->post(
-            'auth', [
+        $response = $client->post('auth', [
             'allow_redirects' => true,
             'form_params'     => [
                 'consumer_key'    => $this->config->getConsumerKey(),
                 'consumer_secret' => $this->config->getConsumerSecret(),
                 'code'            => $this->config->getAuthorizationCode(),
             ]
-            ]
-        );
+        ]);
 
         if ($response->getStatusCode() !== 200) {
             throw new UnauthorizedException();
@@ -128,12 +124,10 @@ class Authenticator implements IAuthenticator
             ]
         );
 
-        $response = $client->get(
-            'auth', [
+        $response = $client->get('auth', [
             'allow_redirects' => true,
             'query'           => ['refresh_token' => $refreshToken]
-            ]
-        );
+        ]);
 
         if ($response->getStatusCode() !== 200) {
             throw new UnauthorizedException();

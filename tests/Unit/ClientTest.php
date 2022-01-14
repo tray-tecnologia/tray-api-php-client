@@ -3,7 +3,7 @@
 namespace Tests\Unit;
 
 use Tests\TestCase;
-use Tray\Client\Client;
+use Tray\Client;
 use Tray\Client\Config;
 
 class ClientTest extends TestCase
@@ -17,11 +17,12 @@ class ClientTest extends TestCase
             'authorization_code' => '0eadb3a759953ce72aaadf66bee84fa9e8eb9decec8736c11396ecf57ef1e4a9',
         ]);
 
-        $client = new Client($config);
-        $response = $client->getRequest()->get('/info');
+        $client    = new Client($config);
+        $response  = $client->getRequest()->get('/products', ['page' => 2, 'limit' => 3]);
 
+        $formatter = new TestResponseFormatter($response);
         echo '<pre>';
-        print_r($response->getContents());
+        print_r($formatter->toPaginator()->getPageSize());
         echo '</pre>';
         exit;
     }

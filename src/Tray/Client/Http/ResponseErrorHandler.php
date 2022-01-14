@@ -4,7 +4,7 @@ namespace Tray\Client\Http;
 
 use Psr\Http\Message\ResponseInterface;
 use Tray\Client\Contracts\Http\IResponseErrorHandler;
-use Tray\Client\Exception\Http\{
+use Tray\Client\Exception\{
     ClientException,
     RequestException,
     ServerException,

@@ -1,6 +1,6 @@
 <?php
 
-namespace Tray\Client\Exception\Http;
+namespace Tray\Client\Exception;
 
 /**
  * Exception when a server error is encountered (5xx codes)
