@@ -9,6 +9,8 @@ use Tray\Support\EntityHydrator;
 
 class TestResponseFormatter extends ResponseFormatter
 {
+    protected $entityClass = ProductEntity::class;
+
     /**
      * @inheritDoc
      */

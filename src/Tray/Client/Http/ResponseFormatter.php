@@ -2,8 +2,7 @@
 
 namespace Tray\Client\Http;
 
-use Tray\Client\Contracts\Http\IResponse;
-use Tray\Client\Contracts\Http\IResponseFormatter;
+use Tray\Client\Contracts\Http\{IResponse, IResponseFormatter};
 use Tray\Client\Exception\ServerException;
 use Tray\Entities\Contracts\IEntity;
 use Tray\Entities\Entity;
@@ -42,15 +41,25 @@ abstract class ResponseFormatter implements IResponseFormatter
     protected $collectionHydrator = null;
 
     /**
-     * The classes being used to formate.
+     * The entity class.
      *
-     * @var Options $options
+     * @var class-string<IEntity> $entityClass
      */
-    protected $options = [
-        'entity'     => Entity::class,
-        'collection' => Collection::class,
-        'paginator'  => Paginator::class,
-    ];
+    protected $entityClass = Entity::class;
+
+    /**
+     * The collection class.
+     *
+     * @var class-string<ICollection> $collectionClass
+     */
+    protected $collectionClass = Collection::class;
+
+    /**
+     * The paginator class.
+     *
+     * @var class-string<IPaginator> $paginatorClass
+     */
+    protected $paginatorClass = Paginator::class;
 
     /**
      * @inheritDoc
@@ -59,8 +68,16 @@ abstract class ResponseFormatter implements IResponseFormatter
     {
         $this->response = $response;
 
-        foreach ($options as $key => $class) {
-            $this->options[$key] = $class;
+        if (isset($options['entity']) && is_a($options['entity'], IEntity::class)) {
+            $this->entityClass = $options['entity'];
+        }
+
+        if (isset($options['collection']) && is_a($options['collection'], ICollection::class)) {
+            $this->collectionClass = $options['collection'];
+        }
+
+        if (isset($options['paginator']) && is_a($options['paginator'], IPaginator::class)) {
+            $this->paginatorClass = $options['paginator'];
         }
     }
 
@@ -107,11 +124,28 @@ abstract class ResponseFormatter implements IResponseFormatter
     }
 
     /**
+     * Returns the current options.
+     *
+     * @return Options
+     */
+    protected function getCurrentOptions(): array
+    {
+        return [
+            'entity'     => $this->entityClass,
+            'collection' => $this->collectionClass,
+            'paginator'  => $this->paginatorClass,
+        ];
+    }
+
+    /**
      * @inheritDoc
      */
     public function withPaginator(string $paginator): IResponseFormatter
     {
-        return new static($this->response, compact('paginator'));
+        $options = $this->getCurrentOptions();
+        $options['paginator'] = $paginator;
+
+        return new static($this->response, $options);
     }
 
     /**
@@ -119,7 +153,10 @@ abstract class ResponseFormatter implements IResponseFormatter
      */
     public function withCollection(string $collection): IResponseFormatter
     {
-        return new static($this->response, compact('collection'));
+        $options = $this->getCurrentOptions();
+        $options['collection'] = $collection;
+
+        return new static($this->response, $options);
     }
 
     /**
@@ -127,7 +164,10 @@ abstract class ResponseFormatter implements IResponseFormatter
      */
     public function withEntity(string $entity): IResponseFormatter
     {
-        return new static($this->response, compact('entity'));
+        $options = $this->getCurrentOptions();
+        $options['entity'] = $entity;
+
+        return new static($this->response, $options);
     }
 
     /**
@@ -176,14 +216,14 @@ abstract class ResponseFormatter implements IResponseFormatter
      * @return IEntity
      * @throws ServerException
      */
-    protected function makeEntity(array $attributes): IEntity
+    private function makeEntity(array $attributes): IEntity
     {
-        if (is_a($this->options['entity'], IEntity::class)) {
+        if (is_a($this->entityClass, IEntity::class)) {
             throw new ServerException('The option["entity"] must be an instance of IEntity');
         }
 
         /** @var IEntity $entity */
-        $entity = new $this->options['entity']();
+        $entity = new $this->entityClass();
         $this->makeEntityHydrator()->hydrate($attributes, $entity);
 
         return $entity;
@@ -195,13 +235,13 @@ abstract class ResponseFormatter implements IResponseFormatter
      * @return ICollection
      * @throws ServerException
      */
-    protected function makeCollection(): ICollection
+    private function makeCollection(): ICollection
     {
-        if (is_a($this->options['collection'], ICollection::class)) {
+        if (is_a($this->collectionClass, ICollection::class)) {
             throw new ServerException('The option["collection"] must be an instance of ICollection');
         }
 
-        return new $this->options['collection']();
+        return new $this->collectionClass();
     }
 
     /**
@@ -212,12 +252,12 @@ abstract class ResponseFormatter implements IResponseFormatter
      * @return IPaginator
      * @throws ServerException
      */
-    protected function makePaginator(ICollection $items, array $paging): IPaginator
+    private function makePaginator(ICollection $items, array $paging): IPaginator
     {
-        if (is_a($this->options['paginator'], IPaginator::class)) {
+        if (is_a($this->paginatorClass, IPaginator::class)) {
             throw new ServerException('The option["paginator"] must be an instance of IPaginator');
         }
 
-        return new $this->options['paginator']($items, $paging);
+        return new $this->paginatorClass($items, $paging);
     }
 }

@@ -10,7 +10,7 @@ use Tray\Support\Contracts\ICollection;
  * @phpstan-type EntityClass class-string<IEntity>
  * @phpstan-type CollectionClass class-string<ICollection>
  * @phpstan-type PaginatorClass class-string<IPaginator>
- * @phpstan-type OptionalOptions array{entity?:EntityClass,collection?:CollectionClass,paginator?:PaginatorClass}
+ * @phpstan-type Options array{entity?:EntityClass,collection?:CollectionClass,paginator?:PaginatorClass}
  */
 interface IResponseFormatter
 {
@@ -18,7 +18,7 @@ interface IResponseFormatter
      * IResponseFormatter's constructor.
      *
      * @param IResponse $response
-     * @param OptionalOptions $options
+     * @param Options $options
      */
     public function __construct(IResponse $response, array $options = []);
 
