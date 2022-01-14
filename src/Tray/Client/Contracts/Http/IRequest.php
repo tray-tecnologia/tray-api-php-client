@@ -12,9 +12,8 @@ interface IRequest
      * IRequest constructor.
      *
      * @param ClientInterface $httpClient
-     * @param array $options
      */
-    public function __construct(ClientInterface $httpClient, array $options);
+    public function __construct(ClientInterface $httpClient);
 
     /**
      * Returns the authorized http client.
@@ -22,14 +21,6 @@ interface IRequest
      * @return ClientInterface
      */
     public function getHttpClient(): ClientInterface;
-
-    /**
-     * Creates a new Request instance with the given response.
-     * @param class-string<IResponse> $response
-     *
-     * @return IRequest
-     */
-    public function withResponse(string $response): IRequest;
 
     /**
      * Runs the given request.

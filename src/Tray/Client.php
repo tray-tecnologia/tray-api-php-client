@@ -1,15 +1,15 @@
 <?php
 
-namespace Tray\Client;
+namespace Tray;
 
 use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Handler\CurlHandler;
 use GuzzleHttp\HandlerStack;
-use Tray\Client\Contracts\{Auth\IAuthenticator, Http\IRequest, IConfig};
+use Tray\Client\Contracts\{Auth\IAuthenticator, Http\IRequest, IClient, IConfig};
 use Tray\Client\Auth\{Guards\SessionGuard, Authenticator};
 
-class Client implements Contracts\IClient
+class Client implements IClient
 {
     /**
      * The client's config storage.
@@ -55,7 +55,7 @@ class Client implements Contracts\IClient
     public function getRequest(): IRequest
     {
         if (!$this->request) {
-            $this->request = new Http\Request($this->createHttpClient());
+            $this->request = new Client\Http\Request($this->createHttpClient());
         }
 
         return $this->request;

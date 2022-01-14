@@ -2,12 +2,17 @@
 
 namespace Tray\Support;
 
-use ArrayIterator;
+use ArrayAccess;
+use IteratorAggregate;
 use JsonSerializable;
+use ArrayIterator;
 use Traversable;
 use Tray\Support\Contracts\{ICollection, IArrayable};
 
-class Collection implements ICollection
+/**
+ * @SuppressWarnings(PHPMD.TooManyPublicMethods)
+ */
+class Collection implements ICollection, ArrayAccess, IteratorAggregate, JsonSerializable
 {
     /**
      * The items contained in the collection.
@@ -27,21 +32,72 @@ class Collection implements ICollection
     }
 
     /**
-     * @inheritDoc
-    */
-    public function getAvailableFilters(): array
+     * {@inheritDoc}
+     */
+    public function all()
     {
-        // TODO: Implement getAvailableFilters() method.
+        return $this->items;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function push(...$values)
+    {
+        foreach ($values as $value) {
+            $this->items[] = $value;
+        }
+
+        return $this;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function map(callable $callback)
+    {
+        return new static(
+            array_map($callback, $this->all()),
+        );
     }
 
     /**
      * @inheritDoc
      */
-    public function getAppliedFilter(): array
+    public function put($key, $value)
     {
-        // TODO: Implement getAppliedFilter() method.
+        $this->offsetSet($key, $value);
+
+        return $this;
     }
 
+    /**
+     * @inheritDoc
+     */
+    public function get($key, $default = null)
+    {
+        return $this->offsetGet($key);
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function forget($keys)
+    {
+        foreach ((array) $keys as $key) {
+            $this->offsetUnset($key);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function has($key): bool
+    {
+        return $this->offsetExists($key);
+    }
 
     /**
      * Determine if an item exists at an offset.
@@ -140,10 +196,6 @@ class Collection implements ICollection
     {
         if (is_array($items)) {
             return $items;
-        }
-
-        if ($items instanceof IArrayable) {
-            return $items->toArray();
         }
 
         if ($items instanceof JsonSerializable) {

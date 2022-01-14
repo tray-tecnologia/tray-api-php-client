@@ -9,7 +9,7 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Throwable;
 use Tray\Client\Contracts\Http\{IResponseErrorHandler, IRequest, IResponse};
-use Tray\Client\Exception\Http\RequestException;
+use Tray\Client\Exception\RequestException;
 use Tray\Support\Contracts\IArrayable;
 
 class Request implements IRequest
@@ -22,22 +22,11 @@ class Request implements IRequest
     protected $httpClient;
 
     /**
-     * The configs available.
-     *
-     * @var array $options
-     */
-    protected $options = [
-        'response-class'      => Response::class,
-        'error-handler-class' => ResponseErrorHandler::class,
-    ];
-
-    /**
      * @inheritDoc
      */
-    public function __construct(ClientInterface $httpClient, array $options = [])
+    public function __construct(ClientInterface $httpClient)
     {
         $this->httpClient = $httpClient;
-        $this->options    = array_merge($this->options, $options);
     }
 
     /**
@@ -46,14 +35,6 @@ class Request implements IRequest
     public function getHttpClient(): ClientInterface
     {
         return $this->httpClient;
-    }
-
-    /**
-     * @inheritDoc
-     */
-    public function withResponse(string $responseClass): IRequest
-    {
-        return new static($this->httpClient, ['response-class' => $responseClass]);
     }
 
     /**
@@ -164,9 +145,7 @@ class Request implements IRequest
      */
     protected function makeResponse(ResponseInterface $httpResponse): IResponse
     {
-        /** @var class-string<IResponse> $responseClass */
-        $responseClass = $this->options['response-class'];
-        return new $responseClass($httpResponse);
+        return new JsonResponse($httpResponse);
     }
 
     /**
@@ -175,8 +154,6 @@ class Request implements IRequest
      */
     protected function makeResponseErrorHandler(ResponseInterface $httpResponse): IResponseErrorHandler
     {
-        /** @var class-string<IResponseErrorHandler> $errorHandler */
-        $errorHandler = $this->options['error-handler-class'];
-        return new $errorHandler($httpResponse);
+        return new ResponseErrorHandler($httpResponse);
     }
 }

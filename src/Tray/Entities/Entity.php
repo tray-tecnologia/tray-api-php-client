@@ -36,6 +36,13 @@ class Entity implements Contracts\IEntity
     protected $appends = [];
 
     /**
+     * The entity's envelope to hydate it.
+     *
+     * @var ?string $envelope
+     */
+    protected $envelope;
+
+    /**
      * Entity's constructor.
      *
      * @param  array $attributes
