@@ -22,20 +22,6 @@ class Request implements IRequest
     protected $httpClient;
 
     /**
-     * Numbers of attempts.
-     *
-     * @var int $attempts
-     */
-    protected $attempts = 0;
-
-    /**
-     * The limit of retries when a request fails.
-     *
-     * @var int $maxAttempts
-     */
-    protected $maxAttempts = 2;
-
-    /**
      * @inheritDoc
      */
     public function __construct(ClientInterface $httpClient)
@@ -57,7 +43,6 @@ class Request implements IRequest
      */
     public function execute(RequestInterface $request, array $queries = []): IResponse
     {
-        $this->attempts++;
         $request = $request
             ->withHeader('Content-Type', 'application/json')
             ->withHeader('Accept', 'application/json');
@@ -70,7 +55,6 @@ class Request implements IRequest
             throw new RequestException($e->getMessage(), $e->getCode());
         }
 
-        $this->attempts = 0;
         if ($httpResponse->getStatusCode() >= 400) {
             $this->makeResponseErrorHandler($httpResponse)->handle();
         }
@@ -170,15 +154,5 @@ class Request implements IRequest
     protected function makeResponseErrorHandler(ResponseInterface $httpResponse): IResponseErrorHandler
     {
         return new ResponseErrorHandler($httpResponse);
-    }
-
-    /**
-     * Determines if the a retry request should be performed.
-     *
-     * @return bool
-     */
-    protected function shouldRetryRequest(): bool
-    {
-        return $this->attempts < $this->maxAttempts;
     }
 }

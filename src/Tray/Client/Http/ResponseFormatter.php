@@ -126,7 +126,7 @@ abstract class ResponseFormatter implements IResponseFormatter
     /**
      * Returns the current options.
      *
-     * @return Options
+     * @return array
      */
     protected function getCurrentOptions(): array
     {

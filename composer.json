@@ -28,14 +28,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Tray\\": "src/Tray",
-            "Tests\\": "tests"
+            "Tray\\": "src/Tray"
         }
     },
     "autoload-dev": {
-        "classmap": [
-            "tests/"
-        ]
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
     },
     "config": {
         "preferred-install": "dist",

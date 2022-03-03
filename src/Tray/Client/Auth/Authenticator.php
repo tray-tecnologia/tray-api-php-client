@@ -85,11 +85,9 @@ class Authenticator implements IAuthenticator
      */
     protected function requestAccessToken(): Token
     {
-        $client = new Client(
-            [
+        $client = new Client([
             'base_uri' => $this->config->getApiUrl(),
-            ]
-        );
+        ]);
 
         $response = $client->post('auth', [
             'allow_redirects' => true,
@@ -100,7 +98,8 @@ class Authenticator implements IAuthenticator
             ]
         ]);
 
-        if ($response->getStatusCode() !== 200) {
+        $statusCode = $response->getStatusCode();
+        if (!in_array($statusCode, [200, 201])) {
             throw new UnauthorizedException();
         }
 
@@ -118,18 +117,17 @@ class Authenticator implements IAuthenticator
      */
     protected function renewToken(string $refreshToken): Token
     {
-        $client = new Client(
-            [
+        $client = new Client([
             'base_uri' => $this->config->getApiUrl(),
-            ]
-        );
+        ]);
 
         $response = $client->get('auth', [
             'allow_redirects' => true,
             'query'           => ['refresh_token' => $refreshToken]
         ]);
 
-        if ($response->getStatusCode() !== 200) {
+        $statusCode = $response->getStatusCode();
+        if (!in_array($statusCode, [200, 201])) {
             throw new UnauthorizedException();
         }
 
