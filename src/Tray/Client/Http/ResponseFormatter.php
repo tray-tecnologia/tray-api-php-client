@@ -2,13 +2,15 @@
 
 namespace Tray\Client\Http;
 
-use Tray\Client\Contracts\Http\{IResponse, IResponseFormatter};
+use Tray\Client\Contracts\Http\IResponse;
+use Tray\Client\Contracts\Http\IResponseFormatter;
 use Tray\Client\Exception\ServerException;
 use Tray\Entities\Contracts\IEntity;
 use Tray\Entities\Entity;
 use Tray\Pagination\Contracts\IPaginator;
-use Tray\Support\Contracts\{ICollection, IHydrator};
 use Tray\Pagination\Paginator;
+use Tray\Support\Contracts\ICollection;
+use Tray\Support\Contracts\IHydrator;
 use Tray\Support\Collection;
 
 /**
@@ -17,7 +19,7 @@ use Tray\Support\Collection;
  * @phpstan-import-type PaginatorClass from IResponseFormatter
  * @phpstan-type        Options array{entity:EntityClass,collection:CollectionClass,paginator:PaginatorClass}
  */
-abstract class ResponseFormatter implements IResponseFormatter
+class ResponseFormatter implements IResponseFormatter
 {
     /**
      * The response that contains the data to format.
@@ -29,16 +31,16 @@ abstract class ResponseFormatter implements IResponseFormatter
     /**
      * The instance of the entity hydrator.
      *
-     * @var IHydrator|null $entityHydrator
+     * @var IHydrator $entityHydrator
      */
-    protected $entityHydrator = null;
+    protected $entityHydrator;
 
     /**
      * The instance of the collection hydrator.
      *
-     * @var IHydrator|null $collectionHydrator
+     * @var IHydrator $collectionHydrator
      */
-    protected $collectionHydrator = null;
+    protected $collectionHydrator;
 
     /**
      * The entity class.
@@ -64,9 +66,15 @@ abstract class ResponseFormatter implements IResponseFormatter
     /**
      * @inheritDoc
      */
-    public function __construct(IResponse $response, array $options = [])
-    {
-        $this->response = $response;
+    public function __construct(
+        IResponse $response,
+        IHydrator $entityHydrator,
+        IHydrator $collectionHydrator,
+        array $options = []
+    ) {
+        $this->response           = $response;
+        $this->entityHydrator     = $entityHydrator;
+        $this->collectionHydrator = $collectionHydrator;
 
         if (isset($options['entity']) && is_a($options['entity'], IEntity::class)) {
             $this->entityClass = $options['entity'];
@@ -79,48 +87,6 @@ abstract class ResponseFormatter implements IResponseFormatter
         if (isset($options['paginator']) && is_a($options['paginator'], IPaginator::class)) {
             $this->paginatorClass = $options['paginator'];
         }
-    }
-
-    /**
-     * Makes a new instance of a entity hydrator.
-     *
-     * @return IHydrator
-     */
-    abstract protected function makeEntityHydrator(): IHydrator;
-
-    /**
-     * Makes a new instance of a collection hydrator.
-     *
-     * @return IHydrator
-     */
-    abstract protected function makeCollectionHydrator(): IHydrator;
-
-    /**
-     * Returns the instance of the entity hydrator.
-     *
-     * @return IHydrator
-     */
-    protected function getEntityHydrator(): IHydrator
-    {
-        if (!$this->entityHydrator) {
-            $this->entityHydrator = $this->makeEntityHydrator();
-        }
-
-        return $this->entityHydrator;
-    }
-
-    /**
-     * Returns the instance of the collection hydrator.
-     *
-     * @return IHydrator
-     */
-    protected function getCollectionHydrator(): IHydrator
-    {
-        if (!$this->collectionHydrator) {
-            $this->collectionHydrator = $this->makeCollectionHydrator();
-        }
-
-        return $this->collectionHydrator;
     }
 
     /**
@@ -145,7 +111,7 @@ abstract class ResponseFormatter implements IResponseFormatter
         $options = $this->getCurrentOptions();
         $options['paginator'] = $paginator;
 
-        return new static($this->response, $options);
+        return new static($this->response, $this->entityHydrator, $this->collectionHydrator, $options);
     }
 
     /**
@@ -156,7 +122,7 @@ abstract class ResponseFormatter implements IResponseFormatter
         $options = $this->getCurrentOptions();
         $options['collection'] = $collection;
 
-        return new static($this->response, $options);
+        return new static($this->response, $this->entityHydrator, $this->collectionHydrator, $options);
     }
 
     /**
@@ -167,7 +133,7 @@ abstract class ResponseFormatter implements IResponseFormatter
         $options = $this->getCurrentOptions();
         $options['entity'] = $entity;
 
-        return new static($this->response, $options);
+        return new static($this->response, $this->entityHydrator, $this->collectionHydrator, $options);
     }
 
     /**
@@ -188,7 +154,7 @@ abstract class ResponseFormatter implements IResponseFormatter
         $contents   = $this->response->getContents();
         $collection = $this->makeCollection();
 
-        $this->makeCollectionHydrator()->hydrate($contents, $collection);
+        $this->collectionHydrator->hydrate($contents, $collection);
 
         return $collection->map(
             function ($attributes) {
@@ -224,7 +190,7 @@ abstract class ResponseFormatter implements IResponseFormatter
 
         /** @var IEntity $entity */
         $entity = new $this->entityClass();
-        $this->makeEntityHydrator()->hydrate($attributes, $entity);
+        $this->entityHydrator->hydrate($attributes, $entity);
 
         return $entity;
     }

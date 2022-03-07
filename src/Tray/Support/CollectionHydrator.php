@@ -29,7 +29,7 @@ class CollectionHydrator implements IHydrator
      */
     public function hydrate(array $content, $collection): void
     {
-        if (isset($content[$this->envelope])) {
+        if ($this->envelope && isset($content[$this->envelope])) {
             $content = $content[$this->envelope];
         }
 

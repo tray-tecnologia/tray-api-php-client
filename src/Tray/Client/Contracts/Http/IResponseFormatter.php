@@ -5,6 +5,7 @@ namespace Tray\Client\Contracts\Http;
 use Tray\Entities\Contracts\IEntity;
 use Tray\Pagination\Contracts\IPaginator;
 use Tray\Support\Contracts\ICollection;
+use Tray\Support\Contracts\IHydrator;
 
 /**
  * @phpstan-type EntityClass class-string<IEntity>
@@ -18,9 +19,16 @@ interface IResponseFormatter
      * IResponseFormatter's constructor.
      *
      * @param IResponse $response
+     * @param IHydrator $entityHydrator
+     * @param IHydrator $collectionHydrator
      * @param Options $options
      */
-    public function __construct(IResponse $response, array $options = []);
+    public function __construct(
+        IResponse $response,
+        IHydrator $entityHydrator,
+        IHydrator $collectionHydrator,
+        array $options = []
+    );
 
     /**
      * Creates a new response instance with the given entity class.
