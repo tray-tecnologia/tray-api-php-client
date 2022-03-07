@@ -1,15 +1,13 @@
 {
     "name": "tray-client/client",
     "description": "Api client",
+    "type": "library",
     "authors": [
         {
             "name": "Rodrigo Damasceno",
             "email": "rodrigo.damasceno@tray.net.br"
         }
     ],
-    "version": "0.1.0",
-    "license": "MIT",
-    "type": "library",
     "require": {
         "php": "^7.3|^8.0",
         "ext-json": "*",

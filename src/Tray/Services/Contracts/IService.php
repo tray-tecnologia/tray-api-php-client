@@ -4,7 +4,7 @@ namespace Tray\Services\Contracts;
 
 use Tray\Client\Contracts\IClient;
 
-abstract class Service
+abstract class IService
 {
     /**
      * The client instance.
@@ -12,6 +12,13 @@ abstract class Service
      * @var IClient $client
      */
     protected $client;
+
+    /**
+     * Resolução das implementações dos recursos.
+     *
+     * @var IResource[] $binds
+     */
+    protected $binds = [];
 
     /**
      * IService's constructor.
