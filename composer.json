@@ -1,5 +1,5 @@
 {
-    "name": "tray-client/client",
+    "name": "tray/php-client",
     "description": "Api client",
     "type": "library",
     "authors": [
