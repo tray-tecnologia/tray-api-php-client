@@ -2,6 +2,7 @@
 
 namespace Tray\Services\Contracts;
 
+use RuntimeException;
 use Tray\Client\Contracts\IClient;
 
 abstract class IService
@@ -12,13 +13,19 @@ abstract class IService
      * @var IClient $client
      */
     protected $client;
+    /**
+     * The resource classes.
+     *
+     * @var class-string<IResource>[] $bindings
+     */
+    protected $bindings = [];
 
     /**
-     * Resolução das implementações dos recursos.
+     * The instances of the resources.
      *
-     * @var IResource[] $binds
+     * @var IResource[] $resources
      */
-    protected $binds = [];
+    protected $resources = [];
 
     /**
      * IService's constructor.
@@ -28,7 +35,6 @@ abstract class IService
     public function __construct(IClient $client)
     {
         $this->client = $client;
-        $this->makeResources();
     }
 
     /**
@@ -42,9 +48,25 @@ abstract class IService
     }
 
     /**
-     * Creates the service's resources.
+     * Looks at the resource bindings and try to resolve the given property name.
      *
-     * @return void
+     * @param $name
+     * @return IResource
      */
-    abstract protected function makeResources(): void;
+    public function __get($name)
+    {
+        if (isset($this->resources[$name])) {
+            return $this->resources[$name];
+        }
+
+        if (!isset($this->bindings[$name])) {
+            throw new RuntimeException("Resource '$name' not found");
+        }
+
+        if (!is_a($this->bindings[$name], IResource::class)) {
+            throw new RuntimeException("Resource '$name' must be an instance of ". IResource::class);
+        }
+
+        return $this->resources[$name] = new $this->bindings[$name]($this);
+    }
 }
