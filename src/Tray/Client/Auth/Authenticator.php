@@ -2,7 +2,10 @@
 
 namespace Tray\Client\Auth;
 
-use Tray\Client\Contracts\{Auth\IGuard, Auth\IAuthenticator, Auth\Token, IConfig};
+use Tray\Client\Contracts\Auth\IGuard;
+use Tray\Client\Contracts\Auth\IAuthenticator;
+use Tray\Client\Contracts\Auth\Token;
+use Tray\Client\Contracts\IConfig;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Uri;

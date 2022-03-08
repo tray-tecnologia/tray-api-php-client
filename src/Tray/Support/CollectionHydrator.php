@@ -2,7 +2,8 @@
 
 namespace Tray\Support;
 
-use Tray\Support\Contracts\{ICollection, IHydrator};
+use Tray\Support\Contracts\ICollection;
+use Tray\Support\Contracts\IHydrator;
 
 class CollectionHydrator implements IHydrator
 {

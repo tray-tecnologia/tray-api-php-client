@@ -2,6 +2,7 @@
 
 namespace Tray\Support;
 
+use Doctrine\Inflector\Rules\English\InflectorFactory;
 use voku\helper\ASCII;
 
 /**
@@ -139,5 +140,17 @@ class Str
     public static function upper(string $value): string
     {
         return mb_strtoupper($value, 'UTF-8');
+    }
+
+    /**
+     * TRansforme the given word to it plural.
+     *
+     * @param  string $value
+     * @return string
+     */
+    public static function pluralize(string $value): string
+    {
+        $infectorFactory = new InflectorFactory();
+        return $infectorFactory->build()->pluralize($value);
     }
 }

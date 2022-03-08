@@ -50,7 +50,7 @@ abstract class IService
     /**
      * Looks at the resource bindings and try to resolve the given property name.
      *
-     * @param $name
+     * @param string $name
      * @return IResource
      */
     public function __get($name)
@@ -63,8 +63,8 @@ abstract class IService
             throw new RuntimeException("Resource '$name' not found");
         }
 
-        if (!is_a($this->bindings[$name], IResource::class)) {
-            throw new RuntimeException("Resource '$name' must be an instance of ". IResource::class);
+        if (!is_a($this->bindings[$name], IResource::class, true)) {
+            throw new RuntimeException("Resource '$name' must be an instance of " . IResource::class);
         }
 
         return $this->resources[$name] = new $this->bindings[$name]($this);

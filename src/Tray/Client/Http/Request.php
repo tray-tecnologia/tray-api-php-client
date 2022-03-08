@@ -8,7 +8,9 @@ use GuzzleHttp\Psr7\Request as HttpRequest;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Throwable;
-use Tray\Client\Contracts\Http\{IResponseErrorHandler, IRequest, IResponse};
+use Tray\Client\Contracts\Http\IResponseErrorHandler;
+use Tray\Client\Contracts\Http\IRequest;
+use Tray\Client\Contracts\Http\IResponse;
 use Tray\Client\Exception\RequestException;
 use Tray\Support\Contracts\IArrayable;
 
@@ -88,7 +90,7 @@ class Request implements IRequest
      * @inheritDoc
      * @throws     RequestException
      */
-    public function update($uri, array $queries = [], array $headers = [], $body = null): IResponse
+    public function put($uri, array $queries = [], array $headers = [], $body = null): IResponse
     {
         $body = $this->toJson($body);
 

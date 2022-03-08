@@ -11,6 +11,7 @@
     "require": {
         "php": "^7.3|^8.0",
         "ext-json": "*",
+        "doctrine/inflector": "^2.0",
         "guzzlehttp/guzzle": "^7.4",
         "nesbot/carbon": "^2.55",
         "voku/portable-ascii": "^1.5"

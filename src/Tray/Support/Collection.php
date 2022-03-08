@@ -7,7 +7,8 @@ use IteratorAggregate;
 use JsonSerializable;
 use ArrayIterator;
 use Traversable;
-use Tray\Support\Contracts\{ICollection, IArrayable};
+use Tray\Support\Contracts\ICollection;
+use Tray\Support\Contracts\IArrayable;
 
 /**
  * @SuppressWarnings(PHPMD.TooManyPublicMethods)

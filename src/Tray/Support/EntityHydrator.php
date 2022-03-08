@@ -3,7 +3,7 @@
 namespace Tray\Support;
 
 use Tray\Support\Contracts\IHydrator;
-use Tray\Entities\Contracts\IEntity;
+use Tray\Entities\Entity;
 
 class EntityHydrator implements IHydrator
 {
@@ -26,7 +26,7 @@ class EntityHydrator implements IHydrator
 
     /**
      * @inheritDoc
-     * @param IEntity $entity
+     * @param Entity $entity
      */
     public function hydrate(array $content, $entity): void
     {

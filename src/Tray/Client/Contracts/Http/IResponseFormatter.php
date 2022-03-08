@@ -2,29 +2,30 @@
 
 namespace Tray\Client\Contracts\Http;
 
-use Tray\Entities\Contracts\IEntity;
+use Tray\Entities\Entity;
 use Tray\Pagination\Contracts\IPaginator;
 use Tray\Support\Contracts\ICollection;
 use Tray\Support\Contracts\IHydrator;
 
 /**
- * @phpstan-type EntityClass class-string<IEntity>
  * @phpstan-type CollectionClass class-string<ICollection>
  * @phpstan-type PaginatorClass class-string<IPaginator>
- * @phpstan-type Options array{entity?:EntityClass,collection?:CollectionClass,paginator?:PaginatorClass}
+ * @phpstan-type Options array{collection?:CollectionClass,paginator?:PaginatorClass}
  */
 interface IResponseFormatter
 {
     /**
      * IResponseFormatter's constructor.
      *
-     * @param IResponse $response
-     * @param IHydrator $entityHydrator
-     * @param IHydrator $collectionHydrator
-     * @param Options $options
+     * @param IResponse              $response
+     * @param class-string<Entity>  $entityClass
+     * @param IHydrator              $entityHydrator
+     * @param IHydrator              $collectionHydrator
+     * @param Options                $options
      */
     public function __construct(
         IResponse $response,
+        string $entityClass,
         IHydrator $entityHydrator,
         IHydrator $collectionHydrator,
         array $options = []
@@ -51,7 +52,7 @@ interface IResponseFormatter
     /**
      * Creates a new response instance with the given entity class.
      *
-     * @param class-string<IEntity> $entity
+     * @param class-string<Entity> $entity
      *
      * @return IResponseFormatter
      */
@@ -74,7 +75,7 @@ interface IResponseFormatter
     /**
      * Transforma o item fornecido em uma entidade.
      *
-     * @return IEntity
+     * @return Entity
      */
-    public function toEntity(): IEntity;
+    public function toEntity(): Entity;
 }

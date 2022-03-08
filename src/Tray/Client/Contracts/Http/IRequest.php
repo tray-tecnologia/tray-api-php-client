@@ -39,7 +39,7 @@ interface IRequest
      * @param  array  $headers
      * @return IResponse
      */
-    public function get($uri, array $queries = [], array $headers = []): IResponse;
+    public function get(string $uri, array $queries = [], array $headers = []): IResponse;
 
     /**
      * Make requests with the POST method.
@@ -50,7 +50,7 @@ interface IRequest
      * @param  array                 $headers
      * @return IResponse
      */
-    public function post($uri, array $queries = [], $body = null, array $headers = []): IResponse;
+    public function post(string $uri, array $queries = [], $body = null, array $headers = []): IResponse;
 
     /**
      * Make requests with the UPDATE method.
@@ -61,7 +61,7 @@ interface IRequest
      * @param  array                 $headers
      * @return IResponse
      */
-    public function update($uri, array $queries = [], array $headers = [], $body = null): IResponse;
+    public function put(string $uri, array $queries = [], array $headers = [], $body = null): IResponse;
 
     /**
      * Make requests with the DELETE method.
@@ -71,5 +71,5 @@ interface IRequest
      * @param  array  $headers
      * @return IResponse
      */
-    public function delete($uri, array $queries = [], array $headers = []): IResponse;
+    public function delete(string $uri, array $queries = [], array $headers = []): IResponse;
 }

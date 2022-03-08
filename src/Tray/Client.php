@@ -6,9 +6,16 @@ use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Handler\CurlHandler;
 use GuzzleHttp\HandlerStack;
-use Tray\Client\Contracts\{Auth\IAuthenticator, Http\IRequest, IClient, IConfig};
-use Tray\Client\Auth\{Guards\SessionGuard, Authenticator};
+use Tray\Client\Contracts\Auth\IAuthenticator;
+use Tray\Client\Contracts\Http\IRequest;
+use Tray\Client\Contracts\IClient;
+use Tray\Client\Contracts\IConfig;
+use Tray\Client\Auth\Guards\SessionGuard;
+use Tray\Client\Auth\Authenticator;
 
+/**
+ * @TODO Criar injeção de dependência.
+*/
 class Client implements IClient
 {
     /**

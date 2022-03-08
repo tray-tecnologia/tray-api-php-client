@@ -2,7 +2,8 @@
 
 namespace Tray\Client\Auth\Guards;
 
-use Tray\Client\Contracts\Auth\{IGuard, Token};
+use Tray\Client\Contracts\Auth\IGuard;
+use Tray\Client\Contracts\Auth\Token;
 
 class SessionGuard implements IGuard
 {

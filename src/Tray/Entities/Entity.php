@@ -2,13 +2,15 @@
 
 namespace Tray\Entities;
 
+use ArrayAccess;
+use JsonSerializable;
 use Tray\Support\Contracts\IArrayable;
 
 /**
  * @SuppressWarnings(PHPMD.TooManyPublicMethods)
  * @SuppressWarnings(PHPMD.ExcessiveClassComplexity)
  */
-class Entity implements Contracts\IEntity
+abstract class Entity implements ArrayAccess, JsonSerializable, IArrayable
 {
     use Concerns\CastsAttributes;
     use Concerns\HasMutations;
@@ -54,7 +56,9 @@ class Entity implements Contracts\IEntity
     }
 
     /**
-     * {@inheritDoc}
+     * Retorna o nome da chave de identificação da entidade.
+     *
+     * @return string
      */
     public function getKeyName()
     {
@@ -62,7 +66,9 @@ class Entity implements Contracts\IEntity
     }
 
     /**
-     * {@inheritDoc}
+     * Retorna o valor da chave de identificação da entidade.
+     *
+     * @return mixed
      */
     public function getKey()
     {
@@ -70,7 +76,10 @@ class Entity implements Contracts\IEntity
     }
 
     /**
-     * {@inheritDoc}
+     * Define o valor da chave de identificação da entidade.
+     *
+     * @param  mixed $value
+     * @return static
      */
     public function setKey($value)
     {
@@ -79,7 +88,10 @@ class Entity implements Contracts\IEntity
     }
 
     /**
-     * {@inheritDoc}
+     * Preenche a modal com os atributos fornecidos.
+     *
+     * @param  array $attributes
+     * @return static
      */
     final public function fill(array $attributes)
     {
@@ -91,7 +103,9 @@ class Entity implements Contracts\IEntity
     }
 
     /**
-     * {@inheritDoc}
+     * Get all of the current attributes on the entity.
+     *
+     * @return array
      */
     public function getAttributes()
     {
@@ -99,7 +113,10 @@ class Entity implements Contracts\IEntity
     }
 
     /**
-     * {@inheritDoc}
+     * Set the array of entity attributes. No checking is done.
+     *
+     * @param  array $attributes
+     * @return static
      */
     public function setRawAttributes(array $attributes)
     {
@@ -147,7 +164,11 @@ class Entity implements Contracts\IEntity
     }
 
     /**
-     * {@inheritDoc}
+     * Set a given attribute on the model.
+     *
+     * @param  string  $key
+     * @param  mixed  $value
+     * @return mixed
      */
     public function setAttribute($key, $value)
     {
