@@ -3,7 +3,6 @@
 namespace Tray\Client\Auth;
 
 use Tray\Client\Contracts\Auth\IGuard;
-use Tray\Client\Contracts\Auth\IAuthenticator;
 use Tray\Client\Contracts\Auth\Token;
 use Tray\Client\Contracts\IConfig;
 use GuzzleHttp\Exception\GuzzleException;
@@ -15,7 +14,7 @@ use Tray\Client\Exception\UnauthorizedException;
 /**
  * @SuppressWarnings(PHPMD.StaticAccess)
  */
-class Authenticator implements IAuthenticator
+class Authenticator
 {
     /**
      * @var IGuard $guard
@@ -28,7 +27,9 @@ class Authenticator implements IAuthenticator
     protected $config;
 
     /**
-     * @inheritDoc
+     * IHandler constructor.
+     *
+     * @param IGuard $guard
      */
     public function __construct(IGuard $guard, IConfig $config)
     {
@@ -37,9 +38,12 @@ class Authenticator implements IAuthenticator
     }
 
     /**
-     * @inheritDoc
-     * @throws     UnauthorizedException
-     * @throws     GuzzleException
+     * Attach the authorization strategy to the given client.
+     *
+     * @param  callable $handler
+     * @return callable
+     * @throws UnauthorizedException
+     * @throws GuzzleException
      */
     public function __invoke(callable $handler): callable
     {

@@ -4,6 +4,7 @@ namespace Tests;
 
 use PHPUnit\Runner\AfterLastTestHook;
 use PHPUnit\Runner\BeforeFirstTestHook;
+use function Symfony\Component\DependencyInjection\Loader\Configurator\env;
 
 class Bootstrap implements BeforeFirstTestHook, AfterLastTestHook
 {

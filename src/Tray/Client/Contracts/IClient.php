@@ -2,7 +2,7 @@
 
 namespace Tray\Client\Contracts;
 
-use Tray\Client\Contracts\Auth\IAuthenticator;
+use Tray\Client\Contracts\Auth\IGuard;
 use Tray\Client\Contracts\Http\IRequest;
 
 /**
@@ -21,9 +21,9 @@ interface IClient
      * IClient constructor.
      *
      * @param IConfig $config
-     * @param IAuthenticator|null $authHandler
+     * @param IGuard|null $guard
      */
-    public function __construct(IConfig $config, ?IAuthenticator $authHandler);
+    public function __construct(IConfig $config, ?IGuard $guard);
 
     /**
      * Returns the config instance.

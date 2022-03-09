@@ -6,7 +6,7 @@ use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Handler\CurlHandler;
 use GuzzleHttp\HandlerStack;
-use Tray\Client\Contracts\Auth\IAuthenticator;
+use Tray\Client\Contracts\Auth\IGuard;
 use Tray\Client\Contracts\Http\IRequest;
 use Tray\Client\Contracts\IClient;
 use Tray\Client\Contracts\IConfig;
@@ -28,7 +28,7 @@ class Client implements IClient
     /**
      * The auth strategy used.
      *
-     * @var IAuthenticator $authenticator
+     * @var Authenticator $authenticator
      */
     protected $authenticator;
 
@@ -42,10 +42,10 @@ class Client implements IClient
     /**
      * @inheritDoc
      */
-    public function __construct(IConfig $config, ?IAuthenticator $authenticator = null)
+    public function __construct(IConfig $config, ?IGuard $guard)
     {
         $this->config        = $config;
-        $this->authenticator = $authenticator ?? $this->createDefaultAuthenticator();
+        $this->authenticator = $this->createDefaultAuthenticator($guard);
     }
 
     /**
@@ -71,11 +71,15 @@ class Client implements IClient
     /**
      * Makes the default auth handler.
      *
-     * @return IAuthenticator
+     * @param IGuard|null $guard
+     * @return Authenticator
      */
-    protected function createDefaultAuthenticator(): IAuthenticator
+    protected function createDefaultAuthenticator(?IGuard $guard): Authenticator
     {
-        return new Authenticator(new SessionGuard(), $this->config);
+        if (!$guard) {
+            $guard = new SessionGuard();
+        }
+        return new Authenticator($guard, $this->config);
     }
 
     /**
