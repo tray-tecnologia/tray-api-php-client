@@ -13,9 +13,6 @@ use Tray\Client\Contracts\IConfig;
 use Tray\Client\Auth\Guards\SessionGuard;
 use Tray\Client\Auth\Authenticator;
 
-/**
- * @TODO Criar injeção de dependência.
-*/
 class Client implements IClient
 {
     /**
@@ -42,10 +39,10 @@ class Client implements IClient
     /**
      * @inheritDoc
      */
-    public function __construct(IConfig $config, ?IGuard $guard)
+    public function __construct(IConfig $config, ?IGuard $guard = null)
     {
         $this->config        = $config;
-        $this->authenticator = $this->createDefaultAuthenticator($guard);
+        $this->authenticator = $this->createAuthenticator($guard);
     }
 
     /**
@@ -74,7 +71,7 @@ class Client implements IClient
      * @param IGuard|null $guard
      * @return Authenticator
      */
-    protected function createDefaultAuthenticator(?IGuard $guard): Authenticator
+    protected function createAuthenticator(?IGuard $guard): Authenticator
     {
         if (!$guard) {
             $guard = new SessionGuard();

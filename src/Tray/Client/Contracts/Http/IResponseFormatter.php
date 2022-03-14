@@ -18,7 +18,7 @@ interface IResponseFormatter
      * IResponseFormatter's constructor.
      *
      * @param IResponse              $response
-     * @param class-string<Entity>  $entityClass
+     * @param class-string<Entity>   $entityClass
      * @param IHydrator              $entityHydrator
      * @param IHydrator              $collectionHydrator
      * @param Options                $options

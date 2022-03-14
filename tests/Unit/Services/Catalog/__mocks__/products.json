@@ -1,0 +1,1043 @@
+{
+  "paging": {
+    "total": 11,
+    "page": 1,
+    "offset": 0,
+    "limit": 30,
+    "maxLimit": 50
+  },
+  "sort": [
+    {
+      "id": "asc"
+    }
+  ],
+  "availableFilters": [
+    "id",
+    "name",
+    "category_id",
+    "ean",
+    "available",
+    "price",
+    "brand",
+    "model",
+    "hot",
+    "quantity_sold",
+    "release",
+    "free_shipping",
+    "weight",
+    "image",
+    "release_date",
+    "stock",
+    "promotion",
+    "reference",
+    "has_buy_together",
+    "has_free_gift",
+    "has_description",
+    "brand_id",
+    "additional_button",
+    "virtual_product",
+    "has_ean",
+    "is_kit",
+    "has_title",
+    "has_meta_description",
+    "has_keywords",
+    "has_variations",
+    "has_brand",
+    "has_model",
+    "has_dimension",
+    "has_weight",
+    "property_name",
+    "property_id",
+    "property_value",
+    "property_value_id",
+    "activation_date",
+    "deactivation_date",
+    "show_properties",
+    "kit_has_variation",
+    "id_campaign",
+    "show_discounts",
+    "property_value_all",
+    "minimum_stock",
+    "minimum_stock_alert",
+    "warranty",
+    "warranty_days",
+    "availability",
+    "availability_days",
+    "description",
+    "has_variation",
+    "catalog_id",
+    "modified",
+    "created",
+    "price_range",
+    "current_price_range",
+    "date_range",
+    "date_range_deactivation",
+    "current_price"
+  ],
+  "appliedFilters": [],
+  "Products": [
+    {
+      "Product": {
+        "modified": "2021-09-30 15:26:45",
+        "ean": "321321321312",
+        "is_kit": "0",
+        "slug": "midia/livros/a-song-of-ice-and-fire-game-of-thrones",
+        "ncm": "0",
+        "activation_date": "2019-09-02",
+        "deactivation_date": "2021-02-17",
+        "id": "1",
+        "name": "A song of ice and fire: Game of Thrones",
+        "price": "320.00",
+        "cost_price": "200.00",
+        "dollar_cost_price": "0.00",
+        "promotional_price": "280.00",
+        "start_promotion": "2021-09-30",
+        "end_promotion": "2021-10-01",
+        "brand": "A test brand NOVA EDITADa",
+        "brand_id": "63",
+        "model": "",
+        "weight": "1000",
+        "length": "9",
+        "width": "20",
+        "height": "10",
+        "stock": "-7",
+        "category_id": "3",
+        "available": "0",
+        "availability": "Imediata",
+        "reference": "1234567",
+        "hot": "0",
+        "release": "1",
+        "additional_button": "0",
+        "has_variation": "0",
+        "rating": "0",
+        "count_rating": "0",
+        "quantity_sold": "16",
+        "ProductImage": [
+          {
+            "http": "http://images.tcdn.com.br/img/img_prod/725109/a_song_of_ice_and_fire_game_of_thrones_1_1_20190902145843.png",
+            "https": "https://images.tcdn.com.br/img/img_prod/725109/a_song_of_ice_and_fire_game_of_thrones_1_1_20190902145843.png",
+            "thumbs": {
+              "30": {
+                "http": "http://images.tcdn.com.br/img/img_prod/725109/30_a_song_of_ice_and_fire_game_of_thrones_1_1_20190902145843.png",
+                "https": "https://images.tcdn.com.br/img/img_prod/725109/30_a_song_of_ice_and_fire_game_of_thrones_1_1_20190902145843.png"
+              },
+              "90": {
+                "http": "http://images.tcdn.com.br/img/img_prod/725109/90_a_song_of_ice_and_fire_game_of_thrones_1_1_20190902145843.png",
+                "https": "https://images.tcdn.com.br/img/img_prod/725109/90_a_song_of_ice_and_fire_game_of_thrones_1_1_20190902145843.png"
+              },
+              "180": {
+                "http": "http://images.tcdn.com.br/img/img_prod/725109/180_a_song_of_ice_and_fire_game_of_thrones_1_1_20190902145843.png",
+                "https": "https://images.tcdn.com.br/img/img_prod/725109/180_a_song_of_ice_and_fire_game_of_thrones_1_1_20190902145843.png"
+              }
+            }
+          },
+          {
+            "http": "http://images.tcdn.com.br/img/img_prod/725109/a_song_of_ice_and_fire_game_of_thrones_1_2_20190902145843.png",
+            "https": "https://images.tcdn.com.br/img/img_prod/725109/a_song_of_ice_and_fire_game_of_thrones_1_2_20190902145843.png",
+            "thumbs": {
+              "30": {
+                "http": "http://images.tcdn.com.br/img/img_prod/725109/30_a_song_of_ice_and_fire_game_of_thrones_1_2_20190902145843.png",
+                "https": "https://images.tcdn.com.br/img/img_prod/725109/30_a_song_of_ice_and_fire_game_of_thrones_1_2_20190902145843.png"
+              },
+              "90": {
+                "http": "http://images.tcdn.com.br/img/img_prod/725109/90_a_song_of_ice_and_fire_game_of_thrones_1_2_20190902145843.png",
+                "https": "https://images.tcdn.com.br/img/img_prod/725109/90_a_song_of_ice_and_fire_game_of_thrones_1_2_20190902145843.png"
+              },
+              "180": {
+                "http": "http://images.tcdn.com.br/img/img_prod/725109/180_a_song_of_ice_and_fire_game_of_thrones_1_2_20190902145843.png",
+                "https": "https://images.tcdn.com.br/img/img_prod/725109/180_a_song_of_ice_and_fire_game_of_thrones_1_2_20190902145843.png"
+              }
+            }
+          }
+        ],
+        "url": {
+          "http": "http://rdamasceno.commercesuite.com.br/midia/livros/a-song-of-ice-and-fire-game-of-thrones",
+          "https": "https://rdamasceno.commercesuite.com.br/midia/livros/a-song-of-ice-and-fire-game-of-thrones"
+        },
+        "created": "2019-09-02 14:58:43",
+        "Properties": {
+          "Marca": [
+            "teste"
+          ]
+        },
+        "payment_option": "ou 12x de R$ 33,03 com juros",
+        "payment_option_details": [
+          {
+            "display_name": "Cart\u00e3o Amex - Yapay",
+            "type": "credit_card",
+            "plots": "12",
+            "value": "33.03",
+            "tax": "1.99"
+          }
+        ],
+        "related_categories": [],
+        "release_date": "0000-00-00",
+        "shortcut": "a-song-of-ice-and-fire-game-of-thrones",
+        "virtual_product": "",
+        "minimum_stock": "10",
+        "minimum_stock_alert": "1",
+        "free_shipping": "0",
+        "video": "",
+        "metatag": [],
+        "payment_option_html": "<br />\r\n               <span class='txt-corparcelas'>\r\n                                    <span class='txt-corparcelas'>\r\n                                        <span class='preco-parc2'> ou\r\n                                            <strong class='color'> 12<span>x</span></strong>\r\n                                        </span>\r\n                                    </span>\r\n                                </span>\r\n               <span class='preco-de'> de </span>\r\n                <span class='txt-cadaparcelas'>\r\n                                    <strong class='preco-parc2'>R$\r\n                                        <span>\r\n                                            <span>33<span>,<span>03</span></span></span>\r\n                                        </span>\r\n                                    </strong>\r\n                                </span>\r\n               \r\n               <span class='operadora'> com juros </span>\r\n               \r\n               <!-- 12|33.03|{lower_price}|114 -->",
+        "upon_request": "0",
+        "available_for_purchase": "0",
+        "all_categories": [
+          "1",
+          "3"
+        ],
+        "AdditionalInfos": [],
+        "id_campaign": "",
+        "kit_has_variation": "0",
+        "Variant": []
+      }
+    },
+    {
+      "Product": {
+        "modified": "2021-03-04 10:52:58",
+        "ean": "",
+        "is_kit": "0",
+        "slug": "midia/produto-de-teste",
+        "ncm": "0",
+        "activation_date": "2021-01-28",
+        "deactivation_date": "2021-01-07",
+        "id": "3",
+        "name": "PRODUTO DE TESTE",
+        "price": "100.00",
+        "cost_price": "0.00",
+        "dollar_cost_price": "0.00",
+        "promotional_price": "0.00",
+        "start_promotion": "0000-00-00",
+        "end_promotion": "0000-00-00",
+        "brand": "",
+        "brand_id": "",
+        "model": "",
+        "weight": "100",
+        "length": "100",
+        "width": "100",
+        "height": "100",
+        "stock": "994",
+        "category_id": "1",
+        "available": "1",
+        "availability": "",
+        "reference": "",
+        "hot": "0",
+        "release": "0",
+        "additional_button": "0",
+        "has_variation": "0",
+        "rating": "0",
+        "count_rating": "0",
+        "quantity_sold": "4",
+        "url": {
+          "http": "http://rdamasceno.commercesuite.com.br/midia/produto-de-teste",
+          "https": "https://rdamasceno.commercesuite.com.br/midia/produto-de-teste"
+        },
+        "created": "2019-09-13 09:01:08",
+        "Properties": [],
+        "payment_option": "ou 12x de R$ 10,32 com juros",
+        "payment_option_details": [
+          {
+            "display_name": "Cart\u00e3o Amex - Yapay",
+            "type": "credit_card",
+            "plots": "12",
+            "value": "10.32",
+            "tax": "1.99"
+          }
+        ],
+        "related_categories": [],
+        "release_date": "0000-00-00",
+        "shortcut": "produto-de-teste",
+        "virtual_product": "",
+        "minimum_stock": "100",
+        "minimum_stock_alert": "1",
+        "free_shipping": "0",
+        "video": "",
+        "metatag": [],
+        "payment_option_html": "<br />\r\n               <span class='txt-corparcelas'>\r\n                                    <span class='txt-corparcelas'>\r\n                                        <span class='preco-parc2'> ou\r\n                                            <strong class='color'> 12<span>x</span></strong>\r\n                                        </span>\r\n                                    </span>\r\n                                </span>\r\n               <span class='preco-de'> de </span>\r\n                <span class='txt-cadaparcelas'>\r\n                                    <strong class='preco-parc2'>R$\r\n                                        <span>\r\n                                            <span>10<span>,<span>32</span></span></span>\r\n                                        </span>\r\n                                    </strong>\r\n                                </span>\r\n               \r\n               <span class='operadora'> com juros </span>\r\n               \r\n               <!-- 12|10.32|{lower_price}|114 -->",
+        "upon_request": "0",
+        "available_for_purchase": "1",
+        "all_categories": [
+          "1"
+        ],
+        "AdditionalInfos": [],
+        "ProductImage": [],
+        "id_campaign": "",
+        "kit_has_variation": "0",
+        "Variant": []
+      }
+    },
+    {
+      "Product": {
+        "modified": "2021-03-04 10:52:58",
+        "ean": "",
+        "is_kit": "0",
+        "slug": "eletronicos/mouse",
+        "ncm": "",
+        "activation_date": "2021-01-28",
+        "deactivation_date": "2021-01-28",
+        "id": "7",
+        "name": "Mouse",
+        "price": "100.00",
+        "cost_price": "60.00",
+        "dollar_cost_price": "0.00",
+        "promotional_price": "0.00",
+        "start_promotion": "0000-00-00",
+        "end_promotion": "0000-00-00",
+        "brand": "",
+        "brand_id": "",
+        "model": "",
+        "weight": "100",
+        "length": "40",
+        "width": "25",
+        "height": "25",
+        "stock": "994",
+        "category_id": "9",
+        "available": "1",
+        "availability": "",
+        "reference": "",
+        "hot": "0",
+        "release": "0",
+        "additional_button": "0",
+        "has_variation": "0",
+        "rating": "0",
+        "count_rating": "0",
+        "quantity_sold": "6",
+        "ProductImage": [
+          {
+            "http": "http://images.tcdn.com.br/img/img_prod/725109/mouse_7_1_20191119104830.jpeg",
+            "https": "https://images.tcdn.com.br/img/img_prod/725109/mouse_7_1_20191119104830.jpeg",
+            "thumbs": {
+              "30": {
+                "http": "http://images.tcdn.com.br/img/img_prod/725109/30_mouse_7_1_20191119104830.jpeg",
+                "https": "https://images.tcdn.com.br/img/img_prod/725109/30_mouse_7_1_20191119104830.jpeg"
+              },
+              "90": {
+                "http": "http://images.tcdn.com.br/img/img_prod/725109/90_mouse_7_1_20191119104830.jpeg",
+                "https": "https://images.tcdn.com.br/img/img_prod/725109/90_mouse_7_1_20191119104830.jpeg"
+              },
+              "180": {
+                "http": "http://images.tcdn.com.br/img/img_prod/725109/180_mouse_7_1_20191119104830.jpeg",
+                "https": "https://images.tcdn.com.br/img/img_prod/725109/180_mouse_7_1_20191119104830.jpeg"
+              }
+            }
+          }
+        ],
+        "url": {
+          "http": "http://rdamasceno.commercesuite.com.br/eletronicos/mouse",
+          "https": "https://rdamasceno.commercesuite.com.br/eletronicos/mouse"
+        },
+        "created": "2019-11-19 10:48:29",
+        "Properties": [],
+        "payment_option": "ou 12x de R$ 10,32 com juros",
+        "payment_option_details": [
+          {
+            "display_name": "Cart\u00e3o Amex - Yapay",
+            "type": "credit_card",
+            "plots": "12",
+            "value": "10.32",
+            "tax": "1.99"
+          }
+        ],
+        "related_categories": [],
+        "release_date": "0000-00-00",
+        "shortcut": "mouse",
+        "virtual_product": "",
+        "minimum_stock": "0",
+        "minimum_stock_alert": "0",
+        "free_shipping": "0",
+        "video": "",
+        "metatag": [],
+        "payment_option_html": "<br />\r\n               <span class='txt-corparcelas'>\r\n                                    <span class='txt-corparcelas'>\r\n                                        <span class='preco-parc2'> ou\r\n                                            <strong class='color'> 12<span>x</span></strong>\r\n                                        </span>\r\n                                    </span>\r\n                                </span>\r\n               <span class='preco-de'> de </span>\r\n                <span class='txt-cadaparcelas'>\r\n                                    <strong class='preco-parc2'>R$\r\n                                        <span>\r\n                                            <span>10<span>,<span>32</span></span></span>\r\n                                        </span>\r\n                                    </strong>\r\n                                </span>\r\n               \r\n               <span class='operadora'> com juros </span>\r\n               \r\n               <!-- 12|10.32|{lower_price}|114 -->",
+        "upon_request": "0",
+        "available_for_purchase": "1",
+        "all_categories": [
+          "9"
+        ],
+        "AdditionalInfos": [],
+        "id_campaign": "",
+        "kit_has_variation": "0",
+        "Variant": []
+      }
+    },
+    {
+      "Product": {
+        "modified": "2021-03-04 10:52:58",
+        "ean": "",
+        "is_kit": "0",
+        "slug": "eletronicos/mouse-pad",
+        "ncm": "",
+        "activation_date": "2019-11-19",
+        "deactivation_date": "2021-02-17",
+        "id": "9",
+        "name": "Mouse Pad",
+        "price": "70.00",
+        "cost_price": "20.00",
+        "dollar_cost_price": "0.00",
+        "promotional_price": "0.00",
+        "start_promotion": "0000-00-00",
+        "end_promotion": "0000-00-00",
+        "brand": "",
+        "brand_id": "",
+        "model": "",
+        "weight": "100",
+        "length": "40",
+        "width": "25",
+        "height": "25",
+        "stock": "-1",
+        "category_id": "9",
+        "available": "0",
+        "availability": "",
+        "reference": "",
+        "hot": "0",
+        "release": "0",
+        "additional_button": "0",
+        "has_variation": "0",
+        "rating": "0",
+        "count_rating": "0",
+        "quantity_sold": "4",
+        "ProductImage": [
+          {
+            "http": "http://images.tcdn.com.br/img/img_prod/725109/mouse_pad_9_1_20191119104908.jpg",
+            "https": "https://images.tcdn.com.br/img/img_prod/725109/mouse_pad_9_1_20191119104908.jpg",
+            "thumbs": {
+              "30": {
+                "http": "http://images.tcdn.com.br/img/img_prod/725109/30_mouse_pad_9_1_20191119104908.jpg",
+                "https": "https://images.tcdn.com.br/img/img_prod/725109/30_mouse_pad_9_1_20191119104908.jpg"
+              },
+              "90": {
+                "http": "http://images.tcdn.com.br/img/img_prod/725109/90_mouse_pad_9_1_20191119104908.jpg",
+                "https": "https://images.tcdn.com.br/img/img_prod/725109/90_mouse_pad_9_1_20191119104908.jpg"
+              },
+              "180": {
+                "http": "http://images.tcdn.com.br/img/img_prod/725109/180_mouse_pad_9_1_20191119104908.jpg",
+                "https": "https://images.tcdn.com.br/img/img_prod/725109/180_mouse_pad_9_1_20191119104908.jpg"
+              }
+            }
+          }
+        ],
+        "url": {
+          "http": "http://rdamasceno.commercesuite.com.br/eletronicos/mouse-pad",
+          "https": "https://rdamasceno.commercesuite.com.br/eletronicos/mouse-pad"
+        },
+        "created": "2019-11-19 10:49:08",
+        "Properties": [],
+        "payment_option": "ou 12x de R$ 7,23 com juros",
+        "payment_option_details": [
+          {
+            "display_name": "Cart\u00e3o Amex - Yapay",
+            "type": "credit_card",
+            "plots": "12",
+            "value": "7.23",
+            "tax": "1.99"
+          }
+        ],
+        "related_categories": [],
+        "release_date": "0000-00-00",
+        "shortcut": "mouse-pad",
+        "virtual_product": "",
+        "minimum_stock": "0",
+        "minimum_stock_alert": "0",
+        "free_shipping": "0",
+        "video": "",
+        "metatag": [],
+        "payment_option_html": "<br />\r\n               <span class='txt-corparcelas'>\r\n                                    <span class='txt-corparcelas'>\r\n                                        <span class='preco-parc2'> ou\r\n                                            <strong class='color'> 12<span>x</span></strong>\r\n                                        </span>\r\n                                    </span>\r\n                                </span>\r\n               <span class='preco-de'> de </span>\r\n                <span class='txt-cadaparcelas'>\r\n                                    <strong class='preco-parc2'>R$\r\n                                        <span>\r\n                                            <span>7<span>,<span>23</span></span></span>\r\n                                        </span>\r\n                                    </strong>\r\n                                </span>\r\n               \r\n               <span class='operadora'> com juros </span>\r\n               \r\n               <!-- 12|7.23|{lower_price}|114 -->",
+        "upon_request": "0",
+        "available_for_purchase": "0",
+        "all_categories": [
+          "9"
+        ],
+        "AdditionalInfos": [],
+        "id_campaign": "",
+        "kit_has_variation": "0",
+        "Variant": []
+      }
+    },
+    {
+      "Product": {
+        "modified": "2021-04-29 11:08:43",
+        "ean": "",
+        "is_kit": "0",
+        "slug": "eletronicos/teclado",
+        "ncm": "",
+        "activation_date": "2021-01-15",
+        "deactivation_date": "2021-01-07",
+        "id": "11",
+        "name": "Teclado",
+        "price": "200.00",
+        "cost_price": "120.00",
+        "dollar_cost_price": "0.00",
+        "promotional_price": "0.00",
+        "start_promotion": "0000-00-00",
+        "end_promotion": "0000-00-00",
+        "brand": "",
+        "brand_id": "",
+        "model": "",
+        "weight": "100",
+        "length": "40",
+        "width": "25",
+        "height": "25",
+        "stock": "970",
+        "category_id": "9",
+        "available": "1",
+        "availability": "",
+        "reference": "",
+        "hot": "0",
+        "release": "0",
+        "additional_button": "0",
+        "has_variation": "0",
+        "rating": "0",
+        "count_rating": "0",
+        "quantity_sold": "30",
+        "ProductImage": [
+          {
+            "http": "http://images.tcdn.com.br/img/img_prod/725109/teclado_11_1_20191119104951.jpeg",
+            "https": "https://images.tcdn.com.br/img/img_prod/725109/teclado_11_1_20191119104951.jpeg",
+            "thumbs": {
+              "30": {
+                "http": "http://images.tcdn.com.br/img/img_prod/725109/30_teclado_11_1_20191119104951.jpeg",
+                "https": "https://images.tcdn.com.br/img/img_prod/725109/30_teclado_11_1_20191119104951.jpeg"
+              },
+              "90": {
+                "http": "http://images.tcdn.com.br/img/img_prod/725109/90_teclado_11_1_20191119104951.jpeg",
+                "https": "https://images.tcdn.com.br/img/img_prod/725109/90_teclado_11_1_20191119104951.jpeg"
+              },
+              "180": {
+                "http": "http://images.tcdn.com.br/img/img_prod/725109/180_teclado_11_1_20191119104951.jpeg",
+                "https": "https://images.tcdn.com.br/img/img_prod/725109/180_teclado_11_1_20191119104951.jpeg"
+              }
+            }
+          }
+        ],
+        "url": {
+          "http": "http://rdamasceno.commercesuite.com.br/eletronicos/teclado",
+          "https": "https://rdamasceno.commercesuite.com.br/eletronicos/teclado"
+        },
+        "created": "2019-11-19 10:49:51",
+        "Properties": [],
+        "payment_option": "ou 12x de R$ 20,65 com juros",
+        "payment_option_details": [
+          {
+            "display_name": "Cart\u00e3o Amex - Yapay",
+            "type": "credit_card",
+            "plots": "12",
+            "value": "20.65",
+            "tax": "1.99"
+          }
+        ],
+        "related_categories": [],
+        "release_date": "0000-00-00",
+        "shortcut": "teclado",
+        "virtual_product": "",
+        "minimum_stock": "0",
+        "minimum_stock_alert": "0",
+        "free_shipping": "0",
+        "video": "",
+        "metatag": [],
+        "payment_option_html": "<br />\r\n               <span class='txt-corparcelas'>\r\n                                    <span class='txt-corparcelas'>\r\n                                        <span class='preco-parc2'> ou\r\n                                            <strong class='color'> 12<span>x</span></strong>\r\n                                        </span>\r\n                                    </span>\r\n                                </span>\r\n               <span class='preco-de'> de </span>\r\n                <span class='txt-cadaparcelas'>\r\n                                    <strong class='preco-parc2'>R$\r\n                                        <span>\r\n                                            <span>20<span>,<span>65</span></span></span>\r\n                                        </span>\r\n                                    </strong>\r\n                                </span>\r\n               \r\n               <span class='operadora'> com juros </span>\r\n               \r\n               <!-- 12|20.65|{lower_price}|114 -->",
+        "upon_request": "0",
+        "available_for_purchase": "1",
+        "all_categories": [
+          "9"
+        ],
+        "AdditionalInfos": [],
+        "id_campaign": "",
+        "kit_has_variation": "0",
+        "Variant": []
+      }
+    },
+    {
+      "Product": {
+        "modified": "2021-03-15 17:54:25",
+        "ean": "",
+        "is_kit": "0",
+        "slug": "eletronicos/monitor",
+        "ncm": "",
+        "activation_date": "2021-01-07",
+        "deactivation_date": "2021-01-07",
+        "id": "13",
+        "name": "Monitor",
+        "price": "1500.00",
+        "cost_price": "850.00",
+        "dollar_cost_price": "0.00",
+        "promotional_price": "0.00",
+        "start_promotion": "0000-00-00",
+        "end_promotion": "0000-00-00",
+        "brand": "",
+        "brand_id": "",
+        "model": "",
+        "weight": "100",
+        "length": "40",
+        "width": "25",
+        "height": "25",
+        "stock": "1000",
+        "category_id": "27",
+        "available": "0",
+        "availability": "",
+        "reference": "",
+        "hot": "0",
+        "release": "0",
+        "additional_button": "0",
+        "has_variation": "0",
+        "rating": "0",
+        "count_rating": "0",
+        "quantity_sold": "0",
+        "url": {
+          "http": "http://rdamasceno.commercesuite.com.br/eletronicos/monitor",
+          "https": "https://rdamasceno.commercesuite.com.br/eletronicos/monitor"
+        },
+        "created": "2019-11-19 10:54:29",
+        "Properties": [],
+        "payment_option": "ou 12x de R$ 154,85 com juros",
+        "payment_option_details": [
+          {
+            "display_name": "Cart\u00e3o Amex - Yapay",
+            "type": "credit_card",
+            "plots": "12",
+            "value": "154.85",
+            "tax": "1.99"
+          }
+        ],
+        "related_categories": [],
+        "release_date": "0000-00-00",
+        "shortcut": "monitor",
+        "virtual_product": "",
+        "minimum_stock": "0",
+        "minimum_stock_alert": "0",
+        "free_shipping": "0",
+        "video": "",
+        "metatag": [],
+        "payment_option_html": "<br />\r\n               <span class='txt-corparcelas'>\r\n                                    <span class='txt-corparcelas'>\r\n                                        <span class='preco-parc2'> ou\r\n                                            <strong class='color'> 12<span>x</span></strong>\r\n                                        </span>\r\n                                    </span>\r\n                                </span>\r\n               <span class='preco-de'> de </span>\r\n                <span class='txt-cadaparcelas'>\r\n                                    <strong class='preco-parc2'>R$\r\n                                        <span>\r\n                                            <span>154<span>,<span>85</span></span></span>\r\n                                        </span>\r\n                                    </strong>\r\n                                </span>\r\n               \r\n               <span class='operadora'> com juros </span>\r\n               \r\n               <!-- 12|154.85|{lower_price}|114 -->",
+        "upon_request": "0",
+        "available_for_purchase": "0",
+        "all_categories": [
+          "1",
+          "3",
+          "27"
+        ],
+        "AdditionalInfos": [],
+        "ProductImage": [],
+        "id_campaign": "",
+        "kit_has_variation": "0",
+        "Variant": []
+      }
+    },
+    {
+      "Product": {
+        "modified": "2021-03-04 10:52:58",
+        "ean": "",
+        "is_kit": "0",
+        "slug": "eletronicos/teste",
+        "ncm": "",
+        "activation_date": "2021-01-07",
+        "deactivation_date": "2021-01-07",
+        "id": "15",
+        "name": "Teste",
+        "price": "1500.00",
+        "cost_price": "850.00",
+        "dollar_cost_price": "0.00",
+        "promotional_price": "0.00",
+        "start_promotion": "0000-00-00",
+        "end_promotion": "0000-00-00",
+        "brand": "Marca Teste",
+        "brand_id": "9",
+        "model": "",
+        "weight": "100",
+        "length": "40",
+        "width": "25",
+        "height": "25",
+        "stock": "1000",
+        "category_id": "9",
+        "available": "0",
+        "availability": "",
+        "reference": "",
+        "hot": "0",
+        "release": "0",
+        "additional_button": "",
+        "has_variation": "0",
+        "rating": "0",
+        "count_rating": "0",
+        "quantity_sold": "0",
+        "url": {
+          "http": "http://rdamasceno.commercesuite.com.br/eletronicos/teste",
+          "https": "https://rdamasceno.commercesuite.com.br/eletronicos/teste"
+        },
+        "created": "2019-12-06 10:30:46",
+        "Properties": [],
+        "payment_option": "ou 12x de R$ 154,85 com juros",
+        "payment_option_details": [
+          {
+            "display_name": "Cart\u00e3o Amex - Yapay",
+            "type": "credit_card",
+            "plots": "12",
+            "value": "154.85",
+            "tax": "1.99"
+          }
+        ],
+        "related_categories": [],
+        "release_date": "0000-00-00",
+        "shortcut": "teste",
+        "virtual_product": "",
+        "minimum_stock": "0",
+        "minimum_stock_alert": "0",
+        "free_shipping": "0",
+        "video": "",
+        "metatag": [],
+        "payment_option_html": "<br />\r\n               <span class='txt-corparcelas'>\r\n                                    <span class='txt-corparcelas'>\r\n                                        <span class='preco-parc2'> ou\r\n                                            <strong class='color'> 12<span>x</span></strong>\r\n                                        </span>\r\n                                    </span>\r\n                                </span>\r\n               <span class='preco-de'> de </span>\r\n                <span class='txt-cadaparcelas'>\r\n                                    <strong class='preco-parc2'>R$\r\n                                        <span>\r\n                                            <span>154<span>,<span>85</span></span></span>\r\n                                        </span>\r\n                                    </strong>\r\n                                </span>\r\n               \r\n               <span class='operadora'> com juros </span>\r\n               \r\n               <!-- 12|154.85|{lower_price}|114 -->",
+        "upon_request": "0",
+        "available_for_purchase": "0",
+        "all_categories": [
+          "9"
+        ],
+        "AdditionalInfos": [],
+        "ProductImage": [],
+        "id_campaign": "",
+        "kit_has_variation": "0",
+        "Variant": []
+      }
+    },
+    {
+      "Product": {
+        "modified": "2021-03-17 10:57:41",
+        "ean": "",
+        "is_kit": "1",
+        "slug": "midia/livros/teste",
+        "ncm": "",
+        "activation_date": "2021-03-17",
+        "deactivation_date": "2021-03-17",
+        "id": "17",
+        "name": "Teste",
+        "price": "300.00",
+        "cost_price": "0.00",
+        "dollar_cost_price": "0.00",
+        "promotional_price": "0.00",
+        "start_promotion": "0000-00-00",
+        "end_promotion": "0000-00-00",
+        "brand": "",
+        "brand_id": "",
+        "model": "",
+        "weight": "200",
+        "length": "0",
+        "width": "0",
+        "height": "0",
+        "stock": "971",
+        "category_id": "3",
+        "available": "1",
+        "availability": "",
+        "reference": "",
+        "hot": "0",
+        "release": "0",
+        "additional_button": "0",
+        "has_variation": "0",
+        "rating": "0",
+        "count_rating": "0",
+        "quantity_sold": "0",
+        "url": {
+          "http": "http://rdamasceno.commercesuite.com.br/midia/livros/teste",
+          "https": "https://rdamasceno.commercesuite.com.br/midia/livros/teste"
+        },
+        "created": "2021-03-04 10:35:42",
+        "Properties": [],
+        "payment_option": "ou 12x de R$ 30,97 com juros",
+        "payment_option_details": [
+          {
+            "display_name": "Cart\u00e3o Amex - Yapay",
+            "type": "credit_card",
+            "plots": "12",
+            "value": "30.97",
+            "tax": "1.99"
+          }
+        ],
+        "related_categories": [],
+        "release_date": "0000-00-00",
+        "shortcut": "teste",
+        "virtual_product": "",
+        "minimum_stock": "0",
+        "minimum_stock_alert": "0",
+        "free_shipping": "0",
+        "video": "",
+        "metatag": [],
+        "payment_option_html": "<br />\r\n               <span class='txt-corparcelas'>\r\n                                    <span class='txt-corparcelas'>\r\n                                        <span class='preco-parc2'> ou\r\n                                            <strong class='color'> 12<span>x</span></strong>\r\n                                        </span>\r\n                                    </span>\r\n                                </span>\r\n               <span class='preco-de'> de </span>\r\n                <span class='txt-cadaparcelas'>\r\n                                    <strong class='preco-parc2'>R$\r\n                                        <span>\r\n                                            <span>30<span>,<span>97</span></span></span>\r\n                                        </span>\r\n                                    </strong>\r\n                                </span>\r\n               \r\n               <span class='operadora'> com juros </span>\r\n               \r\n               <!-- 12|30.97|{lower_price}|114 -->",
+        "upon_request": "0",
+        "available_for_purchase": "1",
+        "all_categories": [
+          "1",
+          "3"
+        ],
+        "AdditionalInfos": [],
+        "ProductImage": [],
+        "id_campaign": "",
+        "kit_has_variation": "0",
+        "Variant": []
+      }
+    },
+    {
+      "Product": {
+        "modified": "2021-04-08 15:25:29",
+        "ean": "",
+        "is_kit": "0",
+        "slug": "eletronicos/teste-",
+        "ncm": "",
+        "activation_date": "2021-04-08",
+        "deactivation_date": "0000-00-00",
+        "id": "19",
+        "name": "Teste",
+        "price": "1500.00",
+        "cost_price": "850.00",
+        "dollar_cost_price": "0.00",
+        "promotional_price": "0.00",
+        "start_promotion": "0000-00-00",
+        "end_promotion": "0000-00-00",
+        "brand": "Marca Teste",
+        "brand_id": "9",
+        "model": "",
+        "weight": "100",
+        "length": "40",
+        "width": "25",
+        "height": "25",
+        "stock": "1000",
+        "category_id": "9",
+        "available": "1",
+        "availability": "",
+        "reference": "",
+        "hot": "0",
+        "release": "0",
+        "additional_button": "",
+        "has_variation": "0",
+        "rating": "0",
+        "count_rating": "0",
+        "quantity_sold": "0",
+        "url": {
+          "http": "http://rdamasceno.commercesuite.com.br/eletronicos/teste-",
+          "https": "https://rdamasceno.commercesuite.com.br/eletronicos/teste-"
+        },
+        "created": "2021-04-08 15:25:29",
+        "Properties": [],
+        "payment_option": "ou 12x de R$ 154,85 com juros",
+        "payment_option_details": [
+          {
+            "display_name": "Cart\u00e3o Amex - Yapay",
+            "type": "credit_card",
+            "plots": "12",
+            "value": "154.85",
+            "tax": "1.99"
+          }
+        ],
+        "related_categories": [],
+        "release_date": "0000-00-00",
+        "shortcut": "teste",
+        "virtual_product": "",
+        "minimum_stock": "0",
+        "minimum_stock_alert": "0",
+        "free_shipping": "0",
+        "video": "",
+        "metatag": [],
+        "payment_option_html": "<br />\r\n               <span class='txt-corparcelas'>\r\n                                    <span class='txt-corparcelas'>\r\n                                        <span class='preco-parc2'> ou\r\n                                            <strong class='color'> 12<span>x</span></strong>\r\n                                        </span>\r\n                                    </span>\r\n                                </span>\r\n               <span class='preco-de'> de </span>\r\n                <span class='txt-cadaparcelas'>\r\n                                    <strong class='preco-parc2'>R$\r\n                                        <span>\r\n                                            <span>154<span>,<span>85</span></span></span>\r\n                                        </span>\r\n                                    </strong>\r\n                                </span>\r\n               \r\n               <span class='operadora'> com juros </span>\r\n               \r\n               <!-- 12|154.85|{lower_price}|114 -->",
+        "upon_request": "0",
+        "available_for_purchase": "1",
+        "all_categories": [
+          "9"
+        ],
+        "AdditionalInfos": [],
+        "ProductImage": [],
+        "id_campaign": "",
+        "kit_has_variation": "0",
+        "Variant": []
+      }
+    },
+    {
+      "Product": {
+        "modified": "2021-04-08 15:26:35",
+        "ean": "",
+        "is_kit": "0",
+        "slug": "eletronicos/teste--",
+        "ncm": "",
+        "activation_date": "2021-04-08",
+        "deactivation_date": "0000-00-00",
+        "id": "21",
+        "name": "Teste",
+        "price": "1500.00",
+        "cost_price": "850.00",
+        "dollar_cost_price": "0.00",
+        "promotional_price": "0.00",
+        "start_promotion": "0000-00-00",
+        "end_promotion": "0000-00-00",
+        "brand": "",
+        "brand_id": "",
+        "model": "",
+        "weight": "100",
+        "length": "40",
+        "width": "25",
+        "height": "25",
+        "stock": "1000",
+        "category_id": "9",
+        "available": "1",
+        "availability": "",
+        "reference": "",
+        "hot": "0",
+        "release": "0",
+        "additional_button": "",
+        "has_variation": "0",
+        "rating": "0",
+        "count_rating": "0",
+        "quantity_sold": "0",
+        "url": {
+          "http": "http://rdamasceno.commercesuite.com.br/eletronicos/teste--",
+          "https": "https://rdamasceno.commercesuite.com.br/eletronicos/teste--"
+        },
+        "created": "2021-04-08 15:26:35",
+        "Properties": [],
+        "payment_option": "ou 12x de R$ 154,85 com juros",
+        "payment_option_details": [
+          {
+            "display_name": "Cart\u00e3o Amex - Yapay",
+            "type": "credit_card",
+            "plots": "12",
+            "value": "154.85",
+            "tax": "1.99"
+          }
+        ],
+        "related_categories": [],
+        "release_date": "0000-00-00",
+        "shortcut": "teste",
+        "virtual_product": "",
+        "minimum_stock": "0",
+        "minimum_stock_alert": "0",
+        "free_shipping": "0",
+        "video": "",
+        "metatag": [],
+        "payment_option_html": "<br />\r\n               <span class='txt-corparcelas'>\r\n                                    <span class='txt-corparcelas'>\r\n                                        <span class='preco-parc2'> ou\r\n                                            <strong class='color'> 12<span>x</span></strong>\r\n                                        </span>\r\n                                    </span>\r\n                                </span>\r\n               <span class='preco-de'> de </span>\r\n                <span class='txt-cadaparcelas'>\r\n                                    <strong class='preco-parc2'>R$\r\n                                        <span>\r\n                                            <span>154<span>,<span>85</span></span></span>\r\n                                        </span>\r\n                                    </strong>\r\n                                </span>\r\n               \r\n               <span class='operadora'> com juros </span>\r\n               \r\n               <!-- 12|154.85|{lower_price}|114 -->",
+        "upon_request": "0",
+        "available_for_purchase": "1",
+        "all_categories": [
+          "9"
+        ],
+        "AdditionalInfos": [],
+        "ProductImage": [],
+        "id_campaign": "",
+        "kit_has_variation": "0",
+        "Variant": []
+      }
+    },
+    {
+      "Product": {
+        "modified": "2021-08-17 15:22:23",
+        "ean": "",
+        "is_kit": "0",
+        "slug": "midia/livro-teste",
+        "ncm": "",
+        "activation_date": "0000-00-00",
+        "deactivation_date": "0000-00-00",
+        "id": "23",
+        "name": "Livro teste",
+        "price": "0.00",
+        "cost_price": "0.00",
+        "dollar_cost_price": "0.00",
+        "promotional_price": "0.00",
+        "start_promotion": "0000-00-00",
+        "end_promotion": "0000-00-00",
+        "brand": "",
+        "brand_id": "",
+        "model": "",
+        "weight": "100",
+        "length": "40",
+        "width": "25",
+        "height": "25",
+        "stock": "0",
+        "category_id": "1",
+        "available": "1",
+        "availability": "",
+        "reference": "",
+        "hot": "0",
+        "release": "0",
+        "additional_button": "0",
+        "has_variation": "0",
+        "rating": "0",
+        "count_rating": "0",
+        "quantity_sold": "0",
+        "ProductImage": [
+          {
+            "http": "http://images.tcdn.com.br/img/img_prod/725109/livro_teste_23_1_cd58870ae1e9e68ccff53090c6f22f03.jpeg",
+            "https": "https://images.tcdn.com.br/img/img_prod/725109/livro_teste_23_1_cd58870ae1e9e68ccff53090c6f22f03.jpeg",
+            "thumbs": {
+              "30": {
+                "http": "http://images.tcdn.com.br/img/img_prod/725109/30_livro_teste_23_1_cd58870ae1e9e68ccff53090c6f22f03.jpeg",
+                "https": "https://images.tcdn.com.br/img/img_prod/725109/30_livro_teste_23_1_cd58870ae1e9e68ccff53090c6f22f03.jpeg"
+              },
+              "90": {
+                "http": "http://images.tcdn.com.br/img/img_prod/725109/90_livro_teste_23_1_cd58870ae1e9e68ccff53090c6f22f03.jpeg",
+                "https": "https://images.tcdn.com.br/img/img_prod/725109/90_livro_teste_23_1_cd58870ae1e9e68ccff53090c6f22f03.jpeg"
+              },
+              "180": {
+                "http": "http://images.tcdn.com.br/img/img_prod/725109/180_livro_teste_23_1_cd58870ae1e9e68ccff53090c6f22f03.jpeg",
+                "https": "https://images.tcdn.com.br/img/img_prod/725109/180_livro_teste_23_1_cd58870ae1e9e68ccff53090c6f22f03.jpeg"
+              }
+            }
+          },
+          {
+            "http": "http://images.tcdn.com.br/img/img_prod/725109/livro_teste_23_2_d467bd255522c2a9ab492a4f8f100bda.jpeg",
+            "https": "https://images.tcdn.com.br/img/img_prod/725109/livro_teste_23_2_d467bd255522c2a9ab492a4f8f100bda.jpeg",
+            "thumbs": {
+              "30": {
+                "http": "http://images.tcdn.com.br/img/img_prod/725109/30_livro_teste_23_2_d467bd255522c2a9ab492a4f8f100bda.jpeg",
+                "https": "https://images.tcdn.com.br/img/img_prod/725109/30_livro_teste_23_2_d467bd255522c2a9ab492a4f8f100bda.jpeg"
+              },
+              "90": {
+                "http": "http://images.tcdn.com.br/img/img_prod/725109/90_livro_teste_23_2_d467bd255522c2a9ab492a4f8f100bda.jpeg",
+                "https": "https://images.tcdn.com.br/img/img_prod/725109/90_livro_teste_23_2_d467bd255522c2a9ab492a4f8f100bda.jpeg"
+              },
+              "180": {
+                "http": "http://images.tcdn.com.br/img/img_prod/725109/180_livro_teste_23_2_d467bd255522c2a9ab492a4f8f100bda.jpeg",
+                "https": "https://images.tcdn.com.br/img/img_prod/725109/180_livro_teste_23_2_d467bd255522c2a9ab492a4f8f100bda.jpeg"
+              }
+            }
+          },
+          {
+            "http": "http://images.tcdn.com.br/img/img_prod/725109/livro_teste_23_3_6d165cb3217ec212aa273336364e27c8.jpeg",
+            "https": "https://images.tcdn.com.br/img/img_prod/725109/livro_teste_23_3_6d165cb3217ec212aa273336364e27c8.jpeg",
+            "thumbs": {
+              "30": {
+                "http": "http://images.tcdn.com.br/img/img_prod/725109/30_livro_teste_23_3_6d165cb3217ec212aa273336364e27c8.jpeg",
+                "https": "https://images.tcdn.com.br/img/img_prod/725109/30_livro_teste_23_3_6d165cb3217ec212aa273336364e27c8.jpeg"
+              },
+              "90": {
+                "http": "http://images.tcdn.com.br/img/img_prod/725109/90_livro_teste_23_3_6d165cb3217ec212aa273336364e27c8.jpeg",
+                "https": "https://images.tcdn.com.br/img/img_prod/725109/90_livro_teste_23_3_6d165cb3217ec212aa273336364e27c8.jpeg"
+              },
+              "180": {
+                "http": "http://images.tcdn.com.br/img/img_prod/725109/180_livro_teste_23_3_6d165cb3217ec212aa273336364e27c8.jpeg",
+                "https": "https://images.tcdn.com.br/img/img_prod/725109/180_livro_teste_23_3_6d165cb3217ec212aa273336364e27c8.jpeg"
+              }
+            }
+          }
+        ],
+        "url": {
+          "http": "http://rdamasceno.commercesuite.com.br/midia/livro-teste",
+          "https": "https://rdamasceno.commercesuite.com.br/midia/livro-teste"
+        },
+        "created": "2021-08-17 15:22:22",
+        "Properties": [],
+        "payment_option": "",
+        "payment_option_details": [],
+        "related_categories": [],
+        "release_date": "0000-00-00",
+        "shortcut": "livro-teste",
+        "virtual_product": "",
+        "minimum_stock": "0",
+        "minimum_stock_alert": "0",
+        "free_shipping": "0",
+        "video": "",
+        "metatag": [],
+        "payment_option_html": "",
+        "upon_request": "1",
+        "available_for_purchase": "0",
+        "all_categories": [
+          "1"
+        ],
+        "AdditionalInfos": [],
+        "id_campaign": "",
+        "kit_has_variation": "0",
+        "Variant": []
+      }
+    }
+  ]
+}

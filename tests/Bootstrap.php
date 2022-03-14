@@ -4,7 +4,7 @@ namespace Tests;
 
 use PHPUnit\Runner\AfterLastTestHook;
 use PHPUnit\Runner\BeforeFirstTestHook;
-use function Symfony\Component\DependencyInjection\Loader\Configurator\env;
+use Symfony\Component\Dotenv\Dotenv;
 
 class Bootstrap implements BeforeFirstTestHook, AfterLastTestHook
 {
@@ -21,6 +21,14 @@ class Bootstrap implements BeforeFirstTestHook, AfterLastTestHook
 
     public function executeBeforeFirstTest(): void
     {
+        $envFile = realpath(__DIR__ . '/../.env');
+        if (!is_readable($envFile)) {
+            return;
+        }
+
+        $dotenv  = new Dotenv();
+        $dotenv->usePutenv(true);
+        $dotenv->loadEnv($envFile);
     }
 
     public function executeAfterLastTest(): void
