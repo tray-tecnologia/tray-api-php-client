@@ -39,7 +39,7 @@ class CatalogServiceTest extends TestCase
     public function testShouldGetPaginatedProducts(): void
     {
         echo '<pre>';
-        print_r($this->store->customerAddress->paginate()->toArray());
+        var_dump($this->store->store->find()->id);
         echo '</pre>';
         exit;
         // Act
