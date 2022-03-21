@@ -19,7 +19,7 @@ class Config extends Entity implements Contracts\IConfig
      */
     public function getConsumerKey(): string
     {
-        return $this->attributes['consumer_key'];
+        return $this->getAttribute('consumer_key') ?? '';
     }
 
     /**
@@ -27,7 +27,7 @@ class Config extends Entity implements Contracts\IConfig
      */
     public function getConsumerSecret(): string
     {
-        return $this->attributes['consumer_secret'];
+        return $this->getAttribute('consumer_secret') ?? '';
     }
 
     /**
@@ -35,7 +35,7 @@ class Config extends Entity implements Contracts\IConfig
      */
     public function getAuthorizationCode(): string
     {
-        return $this->attributes['authorization_code'];
+        return $this->getAttribute('authorization_code') ?? '';
     }
 
     /**

@@ -72,9 +72,9 @@ class Client implements IClient
      * Makes the default auth handler.
      *
      * @param IGuard|null $guard
-     * @return Authenticator
+     * @return IAuthenticator
      */
-    protected function createAuthenticator(?IGuard $guard): Authenticator
+    protected function createAuthenticator(?IGuard $guard): IAuthenticator
     {
         if (!$guard) {
             $guard = new SessionGuard();
