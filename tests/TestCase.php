@@ -18,7 +18,9 @@ abstract class TestCase extends BaseTestCase
     public function getJsonMock(string $name): string
     {
         $reflection = new ReflectionClass(static::class);
-        $directory  = dirname($reflection->getFileName());
+        /** @var string $path */
+        $path       = $reflection->getFileName();
+        $directory  = dirname($path);
         $fileName   = "$directory/__mocks__/$name.json";
 
         if (!file_exists($fileName)) {

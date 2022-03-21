@@ -2,65 +2,16 @@
 
 namespace Tray\Client;
 
-class Config implements Contracts\IConfig
+use Tray\Entities\Entity;
+
+class Config extends Entity implements Contracts\IConfig
 {
-    /**
-     * The store's api url.
-     *
-     * @var string $apiUrl
-     */
-    protected $apiUrl = '';
-
-    /**
-     * The application's consumer key.
-     *
-     * @var string $consumerKey
-     */
-    protected $consumerKey = '';
-
-    /**
-     * The application's secret key.
-     *
-     * @var string $consumerSecret
-     */
-    protected $consumerSecret = '';
-
-    /**
-     * The app's authorization code.
-     *
-     * @var string $authorizationCode
-     */
-    protected $authorizationCode = '';
-
-    /**
-     * @inheritDoc
-     */
-    public function __construct(array $config)
-    {
-        $this->setApiUrl($config['api_url'] ?? '');
-        $this->setConsumerKey($config['consumer_key'] ?? '');
-        $this->setConsumerSecret($config['consumer_secret'] ?? '');
-        $this->setAuthorizationCode($config['authorization_code'] ?? '');
-    }
-
     /**
      * @inheritDoc
      */
     public function getApiUrl(): string
     {
-        return $this->apiUrl;
-    }
-
-    /**
-     * @param string $apiUrl
-     */
-    protected function setApiUrl(string $apiUrl): void
-    {
-        if ($apiUrl && !preg_match('/\/$/', $apiUrl)) {
-            $apiUrl .= '/';
-        }
-
-        $this->apiUrl = $apiUrl;
+        return $this->getAttribute('api_url') ?? '';
     }
 
     /**
@@ -68,15 +19,7 @@ class Config implements Contracts\IConfig
      */
     public function getConsumerKey(): string
     {
-        return $this->consumerKey;
-    }
-
-    /**
-     * @param string $consumerKey
-     */
-    protected function setConsumerKey(string $consumerKey): void
-    {
-        $this->consumerKey = $consumerKey;
+        return $this->attributes['consumer_key'];
     }
 
     /**
@@ -84,15 +27,7 @@ class Config implements Contracts\IConfig
      */
     public function getConsumerSecret(): string
     {
-        return $this->consumerSecret;
-    }
-
-    /**
-     * @param string $consumerSecret
-     */
-    protected function setConsumerSecret(string $consumerSecret): void
-    {
-        $this->consumerSecret = $consumerSecret;
+        return $this->attributes['consumer_secret'];
     }
 
     /**
@@ -100,14 +35,18 @@ class Config implements Contracts\IConfig
      */
     public function getAuthorizationCode(): string
     {
-        return $this->authorizationCode;
+        return $this->attributes['authorization_code'];
     }
 
     /**
-     * @param string $authorizationCode
+     * @param string $apiUrl
      */
-    protected function setAuthorizationCode(string $authorizationCode): void
+    protected function setApiUrlAttribute(string $apiUrl): void
     {
-        $this->authorizationCode = $authorizationCode;
+        if ($apiUrl && !preg_match('/\/$/', $apiUrl)) {
+            $apiUrl .= '/';
+        }
+
+        $this->attributes['api_url'] = $apiUrl;
     }
 }

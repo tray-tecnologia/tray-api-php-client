@@ -22,7 +22,7 @@ class Bootstrap implements BeforeFirstTestHook, AfterLastTestHook
     public function executeBeforeFirstTest(): void
     {
         $envFile = realpath(__DIR__ . '/../.env');
-        if (!is_readable($envFile)) {
+        if (!$envFile || !is_readable($envFile)) {
             return;
         }
 

@@ -38,12 +38,13 @@ class CatalogServiceTest extends TestCase
      */
     public function testShouldGetPaginatedProducts(): void
     {
+        // Act
+        $items = $this->store->brand->paginate();
+
         echo '<pre>';
-        var_dump($this->store->store->find()->id);
+        print_r($items);
         echo '</pre>';
         exit;
-        // Act
-        $products = $this->store->product->paginate();
 
         // Assert
         static::assertInstanceOf(IPaginator::class, $products);

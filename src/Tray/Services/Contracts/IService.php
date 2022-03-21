@@ -31,7 +31,6 @@ abstract class IService
      * IService's constructor.
      *
      * @param IClient $client
-     * @param array $bindings
      */
     public function __construct(IClient $client)
     {

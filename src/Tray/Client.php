@@ -6,12 +6,15 @@ use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Handler\CurlHandler;
 use GuzzleHttp\HandlerStack;
+use RuntimeException;
+use Tray\Client\Contracts\Auth\IAuthenticator;
 use Tray\Client\Contracts\Auth\IGuard;
 use Tray\Client\Contracts\Http\IRequest;
 use Tray\Client\Contracts\IClient;
 use Tray\Client\Contracts\IConfig;
 use Tray\Client\Auth\Guards\SessionGuard;
 use Tray\Client\Auth\Authenticator;
+use Tray\Entities\Entity;
 
 class Client implements IClient
 {
@@ -76,7 +79,9 @@ class Client implements IClient
         if (!$guard) {
             $guard = new SessionGuard();
         }
-        return new Authenticator($guard, $this->config);
+
+        $authenticator = $this->getAuthenticatorClass();
+        return new $authenticator($guard, $this->config);
     }
 
     /**
@@ -99,5 +104,23 @@ class Client implements IClient
         ];
 
         return new HttpClient($options);
+    }
+
+    /**
+     * Get the authenticator instance
+     *
+     * @return class-string<IAuthenticator>
+     */
+    protected function getAuthenticatorClass(): string
+    {
+        $authenticator = null;
+        if ($this->config instanceof Entity) {
+            $authenticator = $this->config->getAttribute('authenticator');
+            if ($authenticator && !is_a($authenticator, IAuthenticator::class, true)) {
+                throw new RuntimeException("The authenticator instance must implements the ".IAuthenticator::class);
+            }
+        }
+
+        return $authenticator ?? Authenticator::class;
     }
 }
