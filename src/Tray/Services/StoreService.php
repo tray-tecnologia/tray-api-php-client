@@ -9,6 +9,7 @@ use Tray\Services\Contracts\IService;
  * @property  Catalog\BrandResource     $brand
  * @property  Catalog\ProductResource   $product
  * @property  Management\StoreResource  $store
+ * @property  Management\UserResource   $user
  */
 class StoreService extends IService
 {
@@ -20,5 +21,6 @@ class StoreService extends IService
         'brand'    =>  Catalog\BrandResource::class,
         'product'  =>  Catalog\ProductResource::class,
         'store'    =>  Management\StoreResource::class,
+        'user'     =>  Management\UserResource::class,
     ];
 }
