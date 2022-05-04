@@ -28,7 +28,7 @@ class Client implements IClient
     /**
      * The auth strategy used.
      *
-     * @var Authenticator $authenticator
+     * @var IAuthenticator $authenticator
      */
     protected $authenticator;
 

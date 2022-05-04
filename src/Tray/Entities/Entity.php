@@ -261,7 +261,7 @@ abstract class Entity implements ArrayAccess, JsonSerializable, IArrayable
      *
      * @param mixed $offset
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return !is_null($this->getAttribute($offset));
     }

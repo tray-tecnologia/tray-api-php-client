@@ -31,7 +31,7 @@ class Str
      */
     public static function ascii(string $value, string $language = 'en'): string
     {
-        return ASCII::to_ascii((string) $value, $language);
+        return ASCII::to_ascii($value, $language);
     }
 
     /**
